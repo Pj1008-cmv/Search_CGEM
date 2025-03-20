@@ -1,0 +1,23 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+
+TestPlan UnitStart;
+
+Test UnitStart UnitStartOps
+{
+	Timeout = "00:01:30";
+	
+}
+
+Flow UnitStart
+{
+	FlowItem UnitStartOps UnitStartOps
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 { Property PassFail = "Pass"; Return 1; }
+	}
+
+}

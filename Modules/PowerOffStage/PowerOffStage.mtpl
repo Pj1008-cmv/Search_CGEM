@@ -1,0 +1,84 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+
+TestPlan PowerOffStage;
+
+Test PythonScript RunStartupPy
+{
+	ScriptPath = "$FUSION_PYTHON_SCRIPT_DIR\\startup.py";
+	Timeout = "0:30:00";
+}
+
+# add more power control 
+Test PythonCommand IsTargetPowerOn
+{
+	Command = "TargetPowerControl.is_target_power_on('Env1')";
+	Timeout = "0:00:30";
+}
+
+Test PythonCommand IsTargetPowerOff
+{
+	Command = "TargetPowerControl.is_target_power_off('env1')";
+	Timeout = "0:00:30";
+}
+
+Test PythonCommand TargetPowerOffControl
+{
+	Command ="TargetPowerControl.target_power_off_control('env1')" ;
+	Timeout = "0:00:30";
+}
+
+Test PythonCommand TargetPowerOnControl
+{
+	Command ="TargetPowerControl.target_power_on_control('env1')" ;
+	Timeout = "0:00:30";
+}
+
+
+## add target_power_off_control / target_power_on_control
+
+## add flash bios - either using python / using bios test method provided by aguila
+
+
+Flow Initialization 
+{
+	FlowItem RunStartupPy RunStartupPy
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; } # generic failure 
+		Result  1 { Property PassFail = "Pass"; Return  1 ; } 
+	}
+}
+
+
+
+Flow PowerOffPlatform
+{
+	FlowItem Initialization Initialization
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0 ;}
+		Result 1 { Property PassFail = "Pass";Return 1 ; }
+	}
+
+	FlowItem IsTargetPowerOn IsTargetPowerOn
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return 0;  }
+		Result  1 { Property PassFail = "Pass"; Return 1;  }
+	}
+	
+	FlowItem TargetPowerOnControl TargetPowerOnControl
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; } #generic Failure
+		Result  1 { Property PassFail = "Pass"; Return  1; }
+	}
+}	
+
+#TODO add FlowItem definition

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--File is auto-generated, any manual edits can be overwritten.-->
+<!DOCTYPE HDMTFlowItemCoor []>
+<HDMTFlowItemCoor>
+  <FlowItem name="BootStageTransition::SocBreak.Start_PowerOffToBootHalt" X="25" Y="25" />
+  <FlowItem name="BootStageTransition::SocBreak.Is_in_bootStage" X="25" Y="25" />
+  <FlowItem name="BootStageTransition::SocBreak.Wait_PowerOffToBootHalt" X="25" Y="25" />
+  <FlowItem name="BootStageTransition::CdieBreak.Start_SocToCdie" X="25" Y="25" />
+  <FlowItem name="BootStageTransition::CdieBreak.Is_in_Cdie_break" X="25" Y="25" />
+  <FlowItem name="BootStageTransition::CdieBreak.Wait_for_SocToCdie" X="25" Y="25" />
+  <FlowItem name="BootStageTransition::BootStageTransition.SocBreak" X="25" Y="25" />
+  <FlowItem name="BootStageTransition::BootStageTransition.CdieBreak" X="25" Y="25" />
+  <FlowItem name="BootStageTransition::Boot_PowerOffStageToEfiStage.PowerOffToCdie" X="25" Y="25" />
+  <FlowItem name="BootStageTransition::VID.GetVID" X="25" Y="25" />
+  <FlowItem name="BootStageTransition::BootStageTransition.VID" X="25" Y="25" />
+  <FlowItem name="BootStageTransition::VID.GetULT" X="25" Y="25" />
+  <FlowItem name="BootStageTransition::VID.GetQDF" X="25" Y="25" />
+</HDMTFlowItemCoor>

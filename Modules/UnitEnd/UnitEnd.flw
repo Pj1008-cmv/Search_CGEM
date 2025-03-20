@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--File is auto-generated, any manual edits can be overwritten.-->
+<!DOCTYPE HDMTFlowItemCoor []>
+<HDMTFlowItemCoor>
+  <FlowItem name="UnitEnd::UnitEnd.UnitEndTest" X="25" Y="25" />
+  <FlowItem name="UnitEnd::UnitEnd.RestartPythonConsole" X="35" Y="45" />
+  <FlowItem name="UnitEnd::UnitEnd.RestartPy" X="45" Y="65" />
+</HDMTFlowItemCoor>

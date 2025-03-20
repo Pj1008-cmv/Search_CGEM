@@ -1,0 +1,28 @@
+Version 1.0;
+
+SubTestPlans
+{
+	"..\\..\\Modules\\BootStageTransition\\BootStageTransition.mtpl";
+	"..\\..\\Modules\\CoreVoltage\\CoreVoltage.mtpl";
+	"..\\..\\Modules\\EFI\\EFI.mtpl";
+	"..\\..\\Modules\\FailureRecovery\\FailureRecovery.mtpl";
+	"..\\..\\Modules\\Intec\\Intec.mtpl";
+	"..\\..\\Modules\\LotEnd\\LotEnd.mtpl";
+	"..\\..\\Modules\\LotStart\\LotStart.mtpl";
+	"..\\..\\Modules\\PowerOffStage\\PowerOffStage.mtpl";
+	"..\\..\\Modules\\PredefinedFlows\\PredefinedFlows.mtpl";
+	"..\\..\\Modules\\PreFlightFlow\\PreFlightFlow.mtpl";
+	"..\\..\\Modules\\Ratio_Control\\Ratio_Control.mtpl";
+	"..\\..\\Modules\\SearchCGEM\\SearchCGEM.mtpl";
+	"..\\..\\Modules\\ShmooCGEM\\ShmooCGEM.mtpl";
+	"..\\..\\Modules\\UnitEnd\\UnitEnd.mtpl";
+	"..\\..\\Modules\\UnitStart\\UnitStart.mtpl";
+	Final ".\\TestPlanFlows\\Boot.mtpl";
+	Final ".\\TestPlanFlows\\Search.mtpl";
+	Final ".\\TestPlanFlows\\Search_f1f2.mtpl";
+	Final ".\\TestPlanFlows\\Search_f3f4.mtpl";
+	Final ".\\TestPlanFlows\\Search_f5f6.mtpl";
+	Final ".\\TestPlanFlows\\Shmoo_f5f6.mtpl";
+	Final ".\\TestPlanFlows\\SSF.mtpl";
+	Final ".\\TestPlanFlows\\Searchf1f4.mtpl";
+}

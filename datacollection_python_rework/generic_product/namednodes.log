@@ -1,0 +1,77 @@
+2025-01-06 14:14:12,065 - WARNING - You are adding to a component something that already has a parent, you should either
+copy it first, or remove it from the old component first, old location: socket0.compute0
+2025-01-06 14:14:13,793 - INFO - Bar.sub_name  p2sb.p2sbcfg -- > p2sb.cfg
+2025-01-06 14:14:13,794 - INFO - Bar.sub_name  p2sb.p2sbcfg -- > p2sb.cfg
+2025-01-06 14:14:13,798 - INFO - Bar.sub_path pmc.pmc.pci_cfg -- > pmc.cfg
+2025-01-06 14:14:13,798 - INFO - Bar.sub_path pmc.pmc.pci_cfg -- > pmc.cfg
+2025-01-06 14:14:13,798 - INFO - Bar.sub_path pmc.pmc.pci_cfg -- > pmc.cfg
+2025-01-06 14:14:13,799 - INFO - Bar.sub_path pmc.pmc.pci_cfg_ssram -- > pmc.cfg.ssram
+2025-01-06 14:14:13,800 - INFO - Bar.sub_path pmc.pmc.pci_cfg_ssram -- > pmc.cfg.ssram
+2025-01-06 14:14:13,801 - INFO - Bar.sub_path pxpd.sippcie2lm_inst0_pcie_cfg_port0 -- > pcie3.port0.cfg
+2025-01-06 14:14:13,802 - INFO - Bar.sub_path pxpd.sippcie2lm_inst0_pcie_cfg_port0 -- > pcie3.port0.cfg
+2025-01-06 14:14:13,803 - INFO - Bar.sub_path pxpe.sippcie2lm_inst0_pcie_cfg_port0 -- > pcie4.port0.cfg
+2025-01-06 14:14:13,803 - INFO - Bar.sub_path pxpe.sippcie2lm_inst0_pcie_cfg_port0 -- > pcie4.port0.cfg
+2025-01-06 14:14:13,804 - INFO - Bar.sub_path pxpf.sippcie1x8_inst0_pcie_cfg_port0 -- > pcie5.port0.cfg
+2025-01-06 14:14:13,804 - INFO - Bar.sub_path pxpf.sippcie1x8_inst0_pcie_cfg_port0 -- > pcie5.port0.cfg
+2025-01-06 14:14:13,835 - INFO - Bar.sub_path ese_soc.cse_cfmia_top -- > ese.cse.cfmia.mem
+2025-01-06 14:14:13,836 - INFO - Bar.sub_path ese_soc.cse_gasket_regs_top.cse_host_regs_top -- > ese.cse.gasket.host
+2025-01-06 14:14:13,837 - INFO - Bar.sub_path ese_soc.cse_gasket_regs_top.cse_host_regs_top -- > ese.cse.gasket.host
+2025-01-06 14:14:13,837 - INFO - Bar.sub_path ese_soc.cse_gasket_regs_top.cse_host_regs_top -- > ese.cse.gasket.host
+2025-01-06 14:14:13,837 - INFO - Bar.sub_path ese_soc.cse_gasket_regs_top.cse_host_regs_top -- > ese.cse.gasket.host
+2025-01-06 14:14:13,837 - INFO - Bar.sub_path ese_soc.cse_gasket_regs_top.cse_host_regs_top -- > ese.cse.gasket.host
+2025-01-06 14:14:13,837 - INFO - Bar.sub_path ese_soc.cse_gasket_regs_top.cse_host_regs_top -- > ese.cse.gasket.host
+2025-01-06 14:14:13,839 - INFO - Bar.sub_path ese_soc.cse_ocs_mia_regs_top.map_lfi2ocp_configreg_pci -- > ese.cse.ocs.iosf2ocp.cfg
+2025-01-06 14:14:13,850 - INFO - Bar.sub_path npk_soc.northpeak_top_map -- > northpeak
+2025-01-06 14:14:13,850 - INFO - Bar.sub_path npk_soc.northpeak_top_map -- > northpeak
+2025-01-06 14:14:13,851 - INFO - Bar.sub_path pdmi_soc.sippdmi_inst0_dmi_cfg_port0 -- > pdmi.port0.cfg
+2025-01-06 14:14:13,851 - INFO - Bar.sub_path pdmi_soc.sippdmi_inst0_dmi_cfg_port0 -- > pdmi.port0.cfg
+2025-01-06 14:14:13,852 - INFO - Bar.sub_path pdmi_soc.sippdmi_inst0_prvt_cfg_sb -- > pdmi.pvt
+2025-01-06 14:14:13,852 - INFO - Bar.sub_path pdmi_soc.sippdmi_inst0_prvt_cfg_sb -- > pdmi.pvt
+2025-01-06 14:14:13,854 - INFO - Bar.sub_path pmc_soc.pmc.pci_cfg -- > pmc.pmc.pci_cfg
+2025-01-06 14:14:13,854 - INFO - Bar.sub_path pmc_soc.pmc.pci_cfg -- > pmc.pmc.pci_cfg
+2025-01-06 14:14:13,854 - INFO - Bar.sub_path pmc_soc.pmc.pci_cfg -- > pmc.pmc.pci_cfg
+2025-01-06 14:14:13,855 - INFO - Bar.sub_path pmc_soc.pmc.pci_cfg_ssram -- > pmc.pmc.pci_cfg_ssram
+2025-01-06 14:14:13,855 - INFO - Bar.sub_path pmc_soc.pmc.pci_cfg_ssram -- > pmc.pmc.pci_cfg_ssram
+2025-01-06 14:14:13,861 - INFO - Bar.sub_path pxpa_soc.sippcie2x16_inst0_pcie_cfg_port_0_ -- > pcie0.port0.cfg
+2025-01-06 14:14:13,861 - INFO - Bar.sub_path pxpa_soc.sippcie2x16_inst0_pcie_cfg_port_0_ -- > pcie0.port0.cfg
+2025-01-06 14:14:13,862 - INFO - Bar.sub_path pxpa_soc.sippcie2x16_inst0_pcie_cfg_port_1_ -- > pcie0.port1.cfg
+2025-01-06 14:14:13,862 - INFO - Bar.sub_path pxpa_soc.sippcie2x16_inst0_pcie_cfg_port_1_ -- > pcie0.port1.cfg
+2025-01-06 14:14:13,863 - INFO - Bar.sub_path pxpb_soc.sippcie1x4_inst0_pcie_cfg_port0 -- > pcie1.port0.cfg
+2025-01-06 14:14:13,864 - INFO - Bar.sub_path pxpb_soc.sippcie1x4_inst0_pcie_cfg_port0 -- > pcie1.port0.cfg
+2025-01-06 14:14:13,865 - INFO - Bar.sub_path smb_soc.smbus_cfg -- > smbus.cfg
+2025-01-06 14:14:13,865 - INFO - Bar.sub_path smb_soc.smbus_cfg -- > smbus.cfg
+2025-01-06 14:14:13,866 - INFO - Bar.sub_path smb_soc.smbus_cfg -- > smbus.cfg
+2025-01-06 14:14:13,866 - INFO - Bar.sub_path smb_soc.smbus_cfg -- > smbus.cfg
+2025-01-06 14:14:13,867 - INFO - Bar.sub_path spi_soc.espi_oob_top_inst.espi_csxe_oob_pcicfg_inst -- > espi.csme.oob.cfg
+2025-01-06 14:14:13,868 - INFO - Bar.sub_path spi_soc.espi_oob_top_inst.espi_csxe_oob_pcicfg_inst -- > espi.csme.oob.cfg
+2025-01-06 14:14:13,868 - INFO - Bar.sub_path spi_soc.espi_oob_top_inst.espi_pmc_oob_pcicfg_inst -- > espi.pmc.oob.cfg
+2025-01-06 14:14:13,869 - INFO - Bar.sub_path spi_soc.spi_bios_pcicfg_inst -- > spi.host.cfg
+2025-01-06 14:14:13,869 - INFO - Bar.sub_path spi_soc.spi_csxe_pcicfg_inst -- > spi.csme.cfg
+2025-01-06 14:14:16,467 - RESULT - Loading mbist uarch nodes for: LNC C0
+2025-01-06 14:14:16,487 - RESULT - Loading scandump uarch nodes for: LNC C0
+2025-01-06 14:14:16,515 - RESULT - Loading ndd uarch nodes for: LNC C0
+2025-01-06 14:14:16,538 - RESULT - Loading safd uarch nodes for: LNC C0
+2025-01-06 14:14:16,564 - RESULT - Loading mbist array access methods
+2025-01-06 14:14:16,565 - RESULT - Loading MBIST uarch nodes for: SOCN B0
+2025-01-06 14:14:16,816 - RESULT - Loading Scandump uarch nodes for: SOCN B0
+2025-01-06 14:14:17,489 - RESULT - Loading MBIST uarch nodes for: COMPUTE0 B0
+2025-01-06 14:14:17,524 - RESULT - Loading Scandump uarch nodes for: COMPUTE0 B0
+2025-01-06 14:14:17,721 - RESULT - Loading MBIST uarch nodes for: SOCS B0
+2025-01-06 14:14:17,771 - RESULT - Loading Scandump uarch nodes for: SOCS B0
+2025-01-06 14:14:17,938 - RESULT - Loading MBIST uarch nodes for: IOE B0
+2025-01-06 14:14:17,947 - RESULT - Loading Scandump uarch nodes for: IOE B0
+2025-01-06 14:14:18,252 - RESULT - Loading LDAT uarch nodes for: CCF
+2025-01-06 14:14:18,252 - RESULT - Loading LDAT uarch nodes for: HAC
+2025-01-06 14:14:20,881 - WARNING - You are adding to a component something that already has a parent, you should either
+copy it first, or remove it from the old component first, old location: arc.io
+2025-01-06 14:14:20,881 - WARNING - You are adding to a component something that already has a parent, you should either
+copy it first, or remove it from the old component first, old location: arc.mmr
+2025-01-06 14:14:20,881 - WARNING - You are adding to a component something that already has a parent, you should either
+copy it first, or remove it from the old component first, old location: arc.cmt
+2025-01-06 14:14:20,881 - WARNING - You are adding to a component something that already has a parent, you should either
+copy it first, or remove it from the old component first, old location: arc.ipc
+2025-01-06 14:14:20,882 - WARNING - You are adding to a component something that already has a parent, you should either
+copy it first, or remove it from the old component first, old location: arc.ssram_ram
+2025-01-06 14:14:20,978 - RESULT - Loading definitions from package C:\Python310\lib\site-packages\pysvext\meteorlake_pch\namednodes\uarch\b0
+2025-01-06 14:14:20,979 - RESULT - Loading mbist array access methods...
+2025-01-06 14:14:20,990 - RESULT - Loading scandump lmdbs...

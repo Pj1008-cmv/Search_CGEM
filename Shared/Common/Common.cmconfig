@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<LineItemServices>
+		<PdmIds>
+			<PdmId>1234</PdmId>
+			<PdmId>1235</PdmId>
+		</PdmIds>
+		<LiraSuites>
+			<!-- INSERT LiraSuits 
+      for example 
+       <Suite>"HAL9000 DT A-STEP"</Suite>
+       <Suite>"HAL9000 DT B-STEP"</Suite>
+       <Suite>"HAL9000 DT 2001"</Suite>
+    -->
+		</LiraSuites>
+		<ProductAttributes>
+			<!-- INSERT list of features, for example 
+      <Attribute>"FuncCore"</Attribute>
+      <Attribute>"GT"</Attribute>
+      <Attribute>"Feature_1"</Attribute>
+      <Attribute>"Feature_2"</Attribute>
+    -->
+		</ProductAttributes>
+	</LineItemServices>
+</Configuration>

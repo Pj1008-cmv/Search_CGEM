@@ -1,0 +1,262 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+
+TestPlan Search_f3f4;
+
+Test DecisionNode NoOperation
+{
+	DefaultDecisionExitPort = 1 ;
+	Timeout = "0:00:30";
+}
+
+FlowDefs
+{
+	Search_f3f4 = Search_f3f4;
+}
+
+Flow INIT 
+{
+    FlowItem Initialization PowerOffStage::PowerOffPlatform
+    {
+        Result -2 { Property PassFail = "Fail"; Return -2; } # always for for HW failure
+		Result -1 { Property PassFail = "Fail"; Return -1; } # always for SW failure
+		Result  0 { Property PassFail = "Fail"; Return 0; } # generic failure 
+		Result  1 { Property PassFail = "Pass"; Return 1; } 
+    }
+}
+
+Flow Search_f3f4
+{
+	FlowItem INIT INIT
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 { Property PassFail = "Pass"; GoTo PreFlightFlow;}
+	}
+
+	FlowItem PreFlightFlow PreFlightFlow::PreFlightFlow
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0  { Property PassFail = "Fail"; Return  0; }
+		Result 1  { Property PassFail = "Pass"; GoTo PrepareSetupForSSF; }
+	}
+
+	FlowItem PrepareSetupForSSF NoOperation
+	{
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0  { Property PassFail = "Fail"; Return  0; }
+		Result 1  { 
+			Property PassFail = "Pass"; 
+			
+			## Setting up content configuration for SSF run
+			Set ContentExecutionSetupVars.ContentGroupName = IAContentSetup_SSF.ContentGroupName;
+			#Set ContentExecutionSetupVars.ContentGroupName = IAContentSetup.ContentGroupName;
+			Set ContentExecutionSetupVars.Timeout = IAContentSetup_SSF.Timeout;
+			Set ContentExecutionSetupVars.BootStage = IAContentSetup_SSF.BootStage;
+			Set ContentExecutionSetupVars.MaxNumberOfTestRuns = IAContentSetup_SSF.MaxNumberOfTestRuns;
+			Set ContentExecutionSetupVars.RequiredNumberOfPasses = IAContentSetup_SSF.RequiredNumberOfPasses;
+			Set ContentExecutionSetupVars.MaxAllowedFailures = IAContentSetup_SSF.MaxAllowedFailures;
+			Set ContentExecutionSetupVars.MaxAllowedConsecutiveFailures = IAContentSetup_SSF.MaxAllowedConsecutiveFailures;
+			Set PostActionsSetupVars.PostFail = IAContentSetup_SSF.PostFail;
+			Set PostActionsSetupVars.PostPass = IAContentSetup_SSF.PostPass;
+			Set ContentExecutionSetupVars.VvarRegex = IAContentSetup_SSF.VvarRegex;
+
+
+			## to enable / disable the content
+			Set EnableContents.SweetSpotFinder = True;
+			Set EnableContents.SearchAndPostScrub = False;
+
+			# Setting up Shmoo mode configuration for SSF run
+			Set ShmooExperimentSetup.ShmooExperimentName = IASSFSetup.ShmooExperimentName;
+			Set ShmooExperimentSetup.ShmooExperimentName = IASSFSetup.ShmooDomainName;
+			
+
+			Set ShmooParam.IsPostScrubEnabled = False;
+			Set SearchParam.ShmooLimiterDestination = nameof(SearchParam.SweetSpotLimiters);
+
+			Set FrequencyVars.AxisName = IASSFSetup.FrequencyAxisName;
+			Set FrequencyVars.ListOfValues = IAf3f4Setup.ShmooFreqValues;
+
+			Set RingVars.AxisName = IASSFSetup.RingAxisName;
+			#Set RingVars.ListOfValues = IASSFSetup.RingValues;
+
+			Set TemperatureVars.AxisName = IASSFSetup.TemperatureAxisName;
+			Set TemperatureVars.ListOfValues = IAf3f4Setup.TemperatureValues;
+
+			Set VoltageVars.AxisName = IASSFSetup.VoltageAxisName;
+
+			Set VfCurveSetupVars.VoltageName = IASSFSetup.VFCurveVoltageName;
+			Set VfCurveSetupVars.FrequencyName = IASSFSetup.VFCurveFrequencyName;
+
+			# Setting up Shmoo CGEM Axes
+			Set ShmooAxesSetupVars.IACoreShmooAxes = IASSFSetup.IAShmooAxes;
+			GoTo RunSSF_ShmooIACore; 
+		}
+	}
+
+	FlowItem RunSSF_ShmooIACore ShmooCGEM::Shmoo
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0  { Property PassFail = "Fail"; Return  0; }
+		## No limiter -- values 
+		Result 1  { Property PassFail = "Pass"; 
+					SmartExitPort => SearchParam.SweetSpotLimiters == null;
+					
+					Set SearchParam.IsNoLimiterSSFEnabled =True;
+					GoTo PrepareSetupForSearch; }
+		## SSF limiter -- offset
+		Result 2 {
+			Property PassFail = "Pass";
+			SmartExitPort => SearchParam.SweetSpotLimiters != null;	
+			Set SearchParam.IsNoLimiterSSFEnabled =False;
+			GoTo PrepareSetupForSearch;
+		}
+	}
+
+	FlowItem PrepareSetupForSearch NoOperation
+	{
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0  { Property PassFail = "Fail"; Return  0; }
+		Result 1  { 
+			Property PassFail = "Pass";
+			Set ContentExecutionSetupVars.ContentGroupName = IAContentSetup.ContentGroupName;
+			Set ContentExecutionSetupVars.Timeout = IAContentSetup.Timeout;
+			Set ContentExecutionSetupVars.BootStage = IAContentSetup.BootStage;
+			Set ContentExecutionSetupVars.MaxNumberOfTestRuns = IAContentSetup.MaxNumberOfTestRuns;
+			Set ContentExecutionSetupVars.RequiredNumberOfPasses = IAContentSetup.RequiredNumberOfPasses;
+			Set ContentExecutionSetupVars.MaxAllowedFailures = IAContentSetup.MaxAllowedFailures;
+			Set ContentExecutionSetupVars.MaxAllowedConsecutiveFailures = IAContentSetup.MaxAllowedConsecutiveFailures;
+			Set PostActionsSetupVars.PostFail = IAContentSetup.PostFail;
+			Set PostActionsSetupVars.PostPass = IAContentSetup.PostPass;
+			Set ContentExecutionSetupVars.VvarRegex = IAContentSetup.VvarRegex;
+
+			## to enable / disable content
+			Set EnableContents.SweetSpotFinder = True;
+			Set EnableContents.SearchAndPostScrub = True;
+
+
+			# Setting up Search mode configuration for Search run
+			Set SearchExperimentSetup.SearchExperimentName = IASearchSetup.SearchExperimentName;
+			Set SearchExperimentSetup.SearchExperimentName = IASearchSetup.SearchDomainName;
+			
+			Set SearchParam.SearchForMin = IASearchSetup.SearchForVmin;
+			Set SearchParam.NumberOfLimiters = IASearchSetup.NumberOfLimiters;
+			Set SearchParam.IsSearchSSFEnabled = True;
+	
+			Set FrequencyVars.AxisName = IASearchSetup.FrequencyAxisName;
+			Set FrequencyVars.ListOfValues = IAf3f4Setup.SearchFreqValue;
+
+			Set TemperatureVars.AxisName = IASearchSetup.TemperatureAxisName;
+			Set TemperatureVars.ListOfValues = IAf3f4Setup.TemperatureValues;
+
+			Set VoltageVars.AxisName = IASearchSetup.VoltageAxisName;
+
+			# Setting uo Search CGEM Axes
+			Set SearchAxesSetupVars.IACoreSearchAxes = IASearchSetup.IASearchAxes;
+			GoTo RunSearch_IACore; 
+		}
+	}
+
+	FlowItem RunSearch_IACore SearchCGEM :: SearchCGEM
+	{
+			Result -2 { Property PassFail = "Fail"; Return -2; }
+			Result -1 { Property PassFail = "Fail"; Return -1; }
+			Result 0  { Property PassFail = "Fail"; Return  0; }
+			Result 1  { Property PassFail = "Pass"; GoTo PreparePostScrub; }
+			Result 2 {
+					Property PassFail = "Pass";
+					SmartExitPort => SearchParam.SearchLimiters == null;
+					SmartExitPort => SearchParam.SearchLimiterDestination == null;
+					Return 2;
+			}
+	}
+
+	FlowItem PreparePostScrub NoOperation 
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0  { Property PassFail = "Fail"; Return  0; }
+		Result 1  { 
+			Property PassFail = "Pass"; 
+			
+			Set ContentExecutionSetupVars.Timeout = IAContentSetup.Timeout;
+			Set ContentExecutionSetupVars.BootStage = IAContentSetup.BootStage;
+			Set ContentExecutionSetupVars.MaxNumberOfTestRuns = IAContentSetup.MaxNumberOfTestRuns;
+			Set ContentExecutionSetupVars.RequiredNumberOfPasses = IAContentSetup.RequiredNumberOfPasses;
+			Set ContentExecutionSetupVars.MaxAllowedFailures = IAContentSetup.MaxAllowedFailures;
+			Set ContentExecutionSetupVars.MaxAllowedConsecutiveFailures = IAContentSetup.MaxAllowedConsecutiveFailures;
+			Set PostActionsSetupVars.PostFail = IAContentSetup.PostFail;
+			Set PostActionsSetupVars.PostPass = IAContentSetup.PostPass;
+			Set ContentExecutionSetupVars.VvarRegex = IAContentSetup.VvarRegex;
+
+			Set EnableContents.SweetSpotFinder = True;
+			Set EnableContents.SearchAndPostScrub = True;
+			
+			# Setting up Shmoo CGEM Axes
+			Set ShmooParam.IsPostScrubEnabled = True;
+			Set ShmooExperimentSetup.ShmooExperimentName = IAPostScrubSetup.PostScrubExperimentName;
+			Set ShmooExperimentSetup.ShmooExperimentName = IAPostScrubSetup.PostScrubDomainName;
+
+			
+			Set FrequencyVars.AxisName = IASSFSetup.FrequencyAxisName;
+			Set FrequencyVars.ListOfValues = IAf3f4Setup.ShmooFreqValues;
+
+			Set TemperatureVars.AxisName = IASSFSetup.TemperatureAxisName;
+			Set TemperatureVars.ListOfValues = IAf3f4Setup.TemperatureValues;
+		
+			Set VoltageVars.AxisName = IASSFSetup.VoltageAxisName;
+
+			Set ShmooAxesSetupVars.IACoreShmooAxes = IASSFSetup.IAShmooAxes;
+
+			Set SearchParam.ShmooLimiterDestination = nameof(SearchParam.PostScrubLimiters);
+			
+			GoTo RunPostScrub; }
+	}
+
+	FlowItem RunPostScrub ShmooCGEM::Shmoo
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0  { Property PassFail = "Fail"; Return  0; }
+		Result 1  { Property PassFail = "Pass"; GoTo ResetUserVar; }
+	}
+
+	FlowItem ResetUserVar NoOperation
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0  { Property PassFail = "Fail"; Return  0; }
+		Result 1  { Property PassFail = "Pass"; 
+		
+			Set ContentExecutionSetupVars.Timeout = "00:00:10";
+			Set ContentExecutionSetupVars.BootStage = "EFI_71";
+			Set ContentExecutionSetupVars.MaxNumberOfTestRuns = 0;
+			Set ContentExecutionSetupVars.RequiredNumberOfPasses = 0;
+			Set ContentExecutionSetupVars.MaxAllowedFailures = 0;
+			Set ContentExecutionSetupVars.MaxAllowedConsecutiveFailures = 0;
+			Set PostActionsSetupVars.PostFail = False;
+			Set PostActionsSetupVars.PostPass = False;
+
+			Set EnableContents.SweetSpotFinder = False;
+			Set EnableContents.SearchAndPostScrub = False;
+			
+			# Setting up Shmoo CGEM Axes
+			Set ShmooParam.IsPostScrubEnabled = False;
+			Set SearchExperimentSetup.SearchExperimentName = "Reset";
+			Set ShmooExperimentSetup.ShmooExperimentName = "Reset";
+
+			
+			Set FrequencyVars.AxisName = "FreqReset";
+			Set FrequencyVars.ListOfValues = Reset.ResetValues;
+
+			Set TemperatureVars.AxisName = "TempReset";
+			Set TemperatureVars.ListOfValues = Reset.ResetValues;
+		
+			Set VoltageVars.AxisName = "VoltReset";
+		Return  1; }
+	}
+}

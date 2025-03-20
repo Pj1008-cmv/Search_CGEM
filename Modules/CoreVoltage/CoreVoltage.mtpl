@@ -1,0 +1,52 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+
+TestPlan CoreVoltage;
+
+#TODO add Import statements
+Test PythonCommand Set_Core0_Voltage
+{
+	Command = EnvConditionsPythonCommand.Set_Core0_Voltage;
+	Timeout = "0:00:30";
+}
+
+Test PythonCommand Read_Core0_Voltage
+{
+	BypassPort = -1;
+	Command = EnvConditionsPythonCommand.Read_Core0_Voltage;
+	Timeout = "0:00:30";
+}
+
+Test PythonCommand StartProfiling
+{
+	Command = "profiler.start_profiling([aizatprofiling.Ring_Ratio_Profile , aizatprofiling.Core_Ratio_Profile, aizatprofiling.Max_DTS_Profile, aizatprofiling.VCC_CORE0, aizatprofiling.Intec_TC_Profile, aizatprofiling.Intec_SP_Profile, aizatprofiling.Intec_FB_Profile])";
+	Timeout = "0:00:02";
+}
+
+Flow CoreVoltage 
+{
+	#TODO add FlowItem definition
+	FlowItem Set_Core0_Voltage Set_Core0_Voltage
+    {
+	   Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+		Result  1 { Property PassFail = "Pass"; GoTo StartProfiling; }
+    }
+    ##		whenever voltage is set, start profiling		##
+	FlowItem StartProfiling StartProfiling
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+		Result  1 { Property PassFail = "Pass"; GoTo Read_Core0_Voltage; }
+	}
+   	FlowItem Read_Core0_Voltage Read_Core0_Voltage
+    {
+	   Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+		Result  1 { Property PassFail = "Pass"; Return 1; }
+    }
+}

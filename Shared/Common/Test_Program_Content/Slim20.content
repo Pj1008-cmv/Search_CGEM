@@ -1,0 +1,42 @@
+Version 1.0;
+@ContentType("DragonContent")
+@BasePath("fs0")
+@BinContentType("IA")
+@BinBootStage('EFI_71')
+
+ContentGroup Slim20
+{
+   
+    DragonContent "DH28_1Charyb_BMG_1C1000F1"
+    {
+        ObjectFilePath = "Dragon\\7484_0x1C_CMV\\ARL8B32A\\DH28-1Charyb-BMG-1C1000F1.obj";
+        Timeout = "00:00:18";
+        Operations = True;
+        Features = True;
+        Enabled = Operations && Features;
+        AdditionalProperties = {
+            "DVFS" : "FALSE",
+            "Note" : "Regular",
+            "ContentSubcategory" : "H",
+            "Core_Atom" : "TRUE",
+            "Core_Big" : "TRUE",
+            "Core_KL" : "Don't Care"
+        };
+    }
+    DragonContent "DH28_1DittoC_GX_1C100113"
+    {
+        ObjectFilePath = "Dragon\\7484_0x1C_CMV\\ARL8B32A\\DH28-1DittoC-GX-1C100113.obj";
+        Timeout = "00:00:18";
+        Operations = True;
+        Features = True;
+        Enabled = Operations && Features;
+        AdditionalProperties = {
+            "DVFS" : "FALSE",
+            "Note" : "Regular",
+            "ContentSubcategory" : "H",
+            "Core_Atom" : "TRUE",
+            "Core_Big" : "TRUE",
+            "Core_KL" : "Don't Care"
+        };
+    }
+}

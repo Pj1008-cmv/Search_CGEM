@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--File is auto-generated, any manual edits can be overwritten.-->
+<!DOCTYPE HDMTFlowItemCoor []>
+<HDMTFlowItemCoor>
+  <FlowItem name="FailureRecovery::FullRecoveryFlow.SetCoreRatioFlow" X="25" Y="25" />
+  <FlowItem name="FailureRecovery::FullRecoveryFlow.EFI" X="25" Y="25" />
+  <FlowItem name="FailureRecovery::FullRecoveryFlow.TemperatureFlow" X="25" Y="25" />
+  <FlowItem name="FailureRecovery::FullRecoveryFlow.BootFromPowerOffToEfi" X="25" Y="25" />
+  <FlowItem name="FailureRecovery::PostPassFailActionsFlow.StartProfiling" X="75" Y="125" />
+  <FlowItem name="FailureRecovery::PostPassFailActionsFlow.ContentNamePrint" X="25" Y="25" />
+  <FlowItem name="FailureRecovery::FullRecoveryFlow.SetAcodeFlow" X="25" Y="25" />
+  <FlowItem name="FailureRecovery::FullRecoveryFlow.SetCoreVoltage" X="25" Y="25" />
+  <FlowItem name="FailureRecovery::PostPassFailActionsFlow.PyError" X="65" Y="105" />
+  <FlowItem name="FailureRecovery::PostPassFailActionsFlow.ContentFailuresDecisionNode" X="55" Y="85" />
+  <FlowItem name="FailureRecovery::PostPassFailActionsFlow.StopProfiling" X="45" Y="65" />
+  <FlowItem name="FailureRecovery::FullRecoveryFlow.SetupRing" X="25" Y="25" />
+  <FlowItem name="FailureRecovery::FullRecoveryFlow.ReadRatios" X="25" Y="25" />
+  <FlowItem name="FailureRecovery::PostPassFailActionsFlow.FullRecoveryFlow" X="35" Y="45" />
+</HDMTFlowItemCoor>

@@ -1,0 +1,266 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+
+TestPlan BootStageTransition;
+
+Test PythonCommand Start_PowerOffToBootHalt
+{
+	Command = "BootStageTransitions._from_poweroff_to_soc_fusebreak()";
+	Timeout = "00:08:00";
+}
+Test PythonCommand Is_in_bootStage
+{
+	Command = "BootStageTransitions.is_in_boot_stage('SOC_FUSEBREAK')";
+	Timeout = "0:00:30";
+}
+Test PythonCommand Wait_PowerOffToBootHalt
+{
+	Command = "BootStageTransitions.wait_for_transition_to_boot_stage('POWER_OFF_STAGE', 'SOC_FUSEBREAK', '3000000')";
+	Timeout = "00:08:00";
+}
+
+Test PythonCommand Start_SocToCdie
+{
+	Command = "BootStageTransitions._from_soc_fusebreak_to_cdie_fusebreak()";
+	Timeout = "00:08:00";
+}
+Test PythonCommand Is_in_Cdie_break
+{
+	Command = "BootStageTransitions.is_in_boot_stage('CDIE_FUSEBREAK')";
+	Timeout = "0:00:30";
+}
+Test PythonCommand Wait_for_SocToCdie
+{
+	Command = "BootStageTransitions.wait_for_transition_to_boot_stage('SOC_FUSEBREAK','CDIE_FUSEBREAK','3000000')";
+	Timeout = "00:08:00";
+}
+
+Test PythonCommand PowerOffToEFI
+{
+	Command = "BootStageTransitions.wait_for_transition_to_boot_stage('POWER_OFF_STAGE','EFI_STAGE','3000000')";
+	Timeout = "00:08:00";
+}
+
+Test PythonCommand PowerOffToCdie
+{
+	Command = "BootStageTransitions.wait_for_transition_to_boot_stage('POWER_OFF_STAGE','CDIE_FUSEBREAK','3000000')";
+	Timeout = "00:08:00";
+}
+
+Test PythonCommand GetVID
+{
+	Command = "profile_logging._read_vid()";
+	Timeout = "00:08:00";
+}
+
+Test PythonCommand GetQDF
+{
+	Command = "profile_logging._read_qdf()";
+	Timeout = "00:08:00";
+}
+
+Test PythonCommand GetULT
+{
+	Command = "profile_logging._read_ult()";
+	Timeout = "00:08:00";
+}
+
+
+Flow SocBreak 
+{
+	FlowItem Start_PowerOffToBootHalt Start_PowerOffToBootHalt
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+		Result  1 { Property PassFail = "Pass"; GoTo Is_in_bootStage; }
+	}
+	FlowItem Is_in_bootStage Is_in_bootStage
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+		Result  1 { Property PassFail = "Pass"; GoTo Wait_PowerOffToBootHalt; }
+	}
+	FlowItem Wait_PowerOffToBootHalt Wait_PowerOffToBootHalt
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+		Result  1 { Property PassFail = "Pass"; Return  1; }
+	}
+}
+
+Flow CdieBreak 
+{
+	FlowItem Start_SocToCdie Start_SocToCdie
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+		Result  1 { Property PassFail = "Pass"; GoTo Is_in_Cdie_break ; }
+	}
+	FlowItem Is_in_Cdie_break Is_in_Cdie_break
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+		Result  1 { Property PassFail = "Pass"; GoTo Wait_for_SocToCdie ; }
+	}
+	FlowItem Wait_for_SocToCdie Wait_for_SocToCdie
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+		Result  1 { Property PassFail = "Pass"; Return 1; }
+	}
+}
+
+Flow VID
+{
+    FlowItem GetVID GetVID
+    {
+        Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+        Result 1
+        {
+            Property PassFail = "Pass";
+            # Assign VisualId to UserVar for later use/logging
+            Set SCVars.VisualId = $Result.PythonResult;
+            GoTo GetULT;
+        }
+    }
+	FlowItem GetULT GetULT
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+        Result 1
+        {
+            Property PassFail = "Pass";
+            Set SCVars.ULT = $Result.PythonResult;
+            GoTo GetQDF;
+        }
+	}
+	FlowItem GetQDF GetQDF
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+        Result 1
+        {
+            Property PassFail = "Pass";
+            Set SCVars.qdf = $Result.PythonResult;
+            Return 1;
+        }
+	}
+}
+
+Flow BootStageTransition
+{
+
+    FlowItem SocBreak SocBreak
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0
+		{
+			Property PassFail = "Fail";
+			Return 0 ;#USER TODO: define value
+		}
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo CdieBreak;#USER TODO: define value
+		}
+	}
+	FlowItem CdieBreak CdieBreak
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0
+		{
+			Property PassFail = "Fail";
+			Return 0 ;#USER TODO: define value
+		}
+		Result 1
+		{
+			Property PassFail = "Pass";
+			GoTo VID ;#USER TODO: define value
+		}
+	}
+	FlowItem VID VID
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0
+		{
+			Property PassFail = "Fail";
+			Return 0 ;#USER TODO: define value
+		}
+		Result 1
+		{
+			Property PassFail = "Pass";
+			Return 1; #USER TODO: define value
+		}
+	}
+
+
+}
+
+Flow Boot_PowerOffStageToEfiStage
+{
+	FlowItem PowerOffToCdie  BootStageTransition::BootStageTransition
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2;}
+		Result -1 { Property PassFail = "Fail"; Return -1;}
+		Result 0 { Property PassFail = "Fail"; Return 0;}
+		Result 1 { 
+			Property PassFail = "Pass";
+			Return 1;}
+	}
+}
+
+
+#Flow BootFlow_WithRetries
+#{
+#	FlowItem PowerOffToCdie BootStageTransitions::Boot_PowerOffStageToEfiStage
+#	{
+#		Result -2 { Property PassFail = "Fail"; Set PlatformVars.BootCount = 0; Return -2;}
+#		Result -1 { Property PassFail = "Fail"; Set PlatformVars.BootCount = 0; Return -1;}
+#		Result 0 { Property PassFail = "Fail"; Set PlatformVars.BootCount = 0; Return 0;}
+#
+#		## Boot Pass will exit port 1
+#		Result 1 { 
+#			Property PassFail = "Pass";
+#
+#			## to reset the boot count
+#			Set PlatformVars.BootCount = 0; 
+#			Return 1;} 
+#
+#		## whenever there is failure from running Boot_PowerOffStageToEfiStage that exit port -2, -1, or 0 and boot count number < Max boot retries number
+#		##		1. the expression evaluated as True and the Flow will exit port 2
+#		##		2. the bootcount will increase by 1 (+1) 
+#		##		3. the flow then proceed to retry the boot by running Boot_PowerOffStageToEfiStage
+#		##      Note: In case where you want to re-run startup py before retry reboot - just add the test inside here
+#		Result 2
+#		{
+#			Property PassFail = "Fail";
+#			SmartExitPort => (PlatformVars.BootCount < PlatformVars.MaxBootRetries) && ($Result.ExitPort < 1);
+#		    Set PlatformVars.BootCount = PlatformVars.BootCount + 1;
+#			GoTo PowerOffToCdie;
+#		}
+#
+#			Result 3
+#		{
+#			Property PassFail = "Fail";
+#			SmartExitPort => (PlatformVars.BootCount > PlatformVars.MaxBootRetries) && ($Result.ExitPort < 1);
+#		    Set PlatformVars.BootCount = 0; 
+#			Return 3;
+#		}
+#	}
+#
+#
+#}
+

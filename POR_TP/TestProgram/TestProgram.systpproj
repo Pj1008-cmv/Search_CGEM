@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <CustomProjectExtensionsPath Condition=" '$(CustomProjectExtensionsPath)' == '' ">$(AguilaCustomProjectPath)\</CustomProjectExtensionsPath>
+    <BaseTestPlanFile>BaseTestPlan.tpl</BaseTestPlanFile>
+    <SubTestPlanFile>SubTestPlan.stpl</SubTestPlanFile>
+    <EnvironmentFile>EnvironmentFile.env</EnvironmentFile>
+    <TestProgramDir>..\..</TestProgramDir>
+    <ProjectGuid>1f0cbacd-4079-4f7c-a43f-8abc0c05ea48</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(CustomProjectExtensionsPath)Aguila.ProjectSystem.TestProgram.props" />
+  <Import Project="$(CustomProjectExtensionsPath)Aguila.ProjectSystem.TestProgram.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Modules\BootStageTransition\BootStageTransition.sysmtpproj" />
+    <ProjectReference Include="..\..\Modules\CoreVoltage\CoreVoltage.sysmtpproj" />
+    <ProjectReference Include="..\..\Modules\EFI\EFI.sysmtpproj" />
+    <ProjectReference Include="..\..\Modules\FailureRecovery\FailureRecovery.sysmtpproj" />
+    <ProjectReference Include="..\..\Modules\Intec\Intec.sysmtpproj" />
+    <ProjectReference Include="..\..\Modules\LotEnd\LotEnd.sysmtpproj" />
+    <ProjectReference Include="..\..\Modules\LotStart\LotStart.sysmtpproj" />
+    <ProjectReference Include="..\..\Modules\PowerOffStage\PowerOffStage.sysmtpproj" />
+    <ProjectReference Include="..\..\Modules\PredefinedFlows\PredefinedFlows.sysmtpproj" />
+    <ProjectReference Include="..\..\Modules\PreFlightFlow\PreFlightFlow.sysmtpproj" />
+    <ProjectReference Include="..\..\Modules\Ratio_Control\Ratio_Control.sysmtpproj" />
+    <ProjectReference Include="..\..\Modules\SearchCGEM\SearchCGEM.sysmtpproj" />
+    <ProjectReference Include="..\..\Modules\ShmooCGEM\ShmooCGEM.sysmtpproj" />
+    <ProjectReference Include="..\..\Modules\UnitEnd\UnitEnd.sysmtpproj" />
+    <ProjectReference Include="..\..\Modules\UnitStart\UnitStart.sysmtpproj" />
+    <ProjectReference Include="..\..\Shared\Common\Common.sysctpproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,49 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+
+TestPlan PreFlightFlow;
+
+Test ConfigureSerialPort ConfigureSerialPort
+{
+	BaudRate = SerialPortSetupVars.BaudRate;
+	ComPortNumber = SerialPortSetupVars.ComPortNumber;
+	DataBits = SerialPortSetupVars.DataBits;
+	Handshake = SerialPortSetupVars.Handshake;
+	Parity = SerialPortSetupVars.Parity;
+	StopBits = SerialPortSetupVars.StopBits;
+	Timeout = "0:01:00";
+}
+
+### restart Python console
+Test RestartPythonConsole RestartPythonService
+{
+	TypeOfRestart = "GrpcService";
+	Timeout = "00:00:20";
+}
+
+Test PythonScript PythonConsoleStartupScript
+{
+	ScriptPath = ProjectStartUp.PythonConsoleStartupScript;
+	Timeout = "00:30:00";
+}
+
+Flow PreFlightFlow
+{
+	FlowItem ConfigureSerialPort ConfigureSerialPort
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 { Property PassFail = "Pass"; GoTo PythonConsoleStartupScript;}
+	}
+
+	FlowItem PythonConsoleStartupScript PythonConsoleStartupScript
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 { Property PassFail = "Pass"; Return 1;}
+	}
+	
+}

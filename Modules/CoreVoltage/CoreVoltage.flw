@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--File is auto-generated, any manual edits can be overwritten.-->
+<!DOCTYPE HDMTFlowItemCoor []>
+<HDMTFlowItemCoor>
+  <FlowItem name="CoreVoltage::CoreVoltage.Set_Core0_Voltage" X="29" Y="41" />
+  <FlowItem name="CoreVoltage::CoreVoltage.Read_Core0_Voltage" X="392" Y="390" />
+  <FlowItem name="CoreVoltage::CoreVoltage.StartProfiling" X="193" Y="197" />
+</HDMTFlowItemCoor>

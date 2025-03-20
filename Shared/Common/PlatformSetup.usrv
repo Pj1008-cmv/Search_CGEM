@@ -1,0 +1,83 @@
+Version 1.0;
+
+##	               Serial Port Configuration            ##
+## ---------------------------------------------------- ##
+UserVars SerialPortSetupVars
+{
+	String BaudRate = "BR_115200";
+	Integer ComPortNumber = 3;
+	String DataBits = "DB_8";
+	String Handshake = "NONE";
+	String Parity = "NO_PARITY";
+	String StopBits = "ONE";
+}
+
+##	              [Content] Target Base Path            ##
+## ---------------------------------------------------- ##
+UserVars TargetBasePaths
+{
+    String Dragon = "FS0:\\ARL8B32A>";
+    String Dragon_CLM = "FS5:\\EFI\\EFI\\";
+    String Rhel_Linux_Pcie = "//fs3//rhel//OryxPCIe1x1x16w2032b//";
+    String Rhel_Nic = "//fs3//rhel//";
+}
+
+##	                   BIOS Configuration               ##
+## ---------------------------------------------------- ##
+UserVars CurrentDomainTrack
+{
+    String currentDomain = "notDefined";
+}
+
+UserVars DomainCommands
+{
+    String coreratio = "Bios_Flash.flash_bios('" + FlashBios.mbknobs + "')";
+    String Clm = "Bios_Flash.flash_bios('" + FlashBios.mbknobs + "')";
+    String ddr = "Bios_Flash.flash_bios('" + FlashBios.mbknobs + "')";
+    String nac = "Bios_Flash.flash_bios('" + FlashBios.nac_4x10 + "')";
+    String svosCommand = "Bios_Flash.flash_bios('" + FlashBios.svos + "')";
+    String rhelCommand = "Bios_Flash.flash_bios('" + FlashBios.rhel + "')";
+}
+
+UserVars FlashBios
+{
+    String svos = "C:\\BIOS\\IDVLCRB.EMB.WR.64.2022.32.3.03.0459_0023.P57_P_LCC_CDF_Production_RhelSgxKnobs_DamDciWdtBtg0Patch_3p55_FW_6p3p4_4x25_QSFP_3.04_80011E1A.bin";
+    String rhel = "C:\\BIOS\\IDVLCRB.EMB.WR.64.2022.32.3.03.0459_0023.P57_P_LCC_CDF_Production_RhelSgxKnobs_DamDciWdtBtg0Patch_3p55_FW_6p3p4_8x10_QSFP_3.04_80011E1B.bin";
+    String nac_4x10 = "C:\\BIOS\\IDVLCRB.EMB.WR.64.2022.32.3.03.0459_0023.P57_P_LCC_CDF_Production_RhelSgxKnobs_DamDciWdtBtg0Patch_3p55_FW_6p3p4_4x10_QSFP_3.04_80011E18.bin";
+    String mbknobs = "C:\\BIOS\\IDVLCRB.FUN.WR.64.2022.34.1.03.0319_0023.P57_P_LCC_CDF_Production_MbKnobs_DamDciWdtBtg0Patch_3p55_FW_6p3p4_4x10_QSFP_3.04_80011E18.bin";
+}
+
+##	                   OS ShutDown Commands             ##
+## ---------------------------------------------------- ##
+UserVars CurrentOsTrack
+{
+    String currentOs = "notDefined";
+}
+
+UserVars OsShutdownCommands
+{
+    String linuxShutdownCommand = "sudo /sbin/shutdown -h now";
+    String windowsShutdownCommand = "shutdown /f /p";
+    String svosShutdownCommand = "shutdown -h now";
+    String efiShutdownCommand = "reset -s";
+}
+
+##	                   OS ShutDown Selector             ##
+## ---------------------------------------------------- ##
+
+#SelectorRuleCollection OsShutdownSelectors
+#{
+#    SelectorRule OsShutdownCommand(LINUX, WINDOWS, SVOS, EFI, DEFAULT)
+#    {
+#        LINUX => CurrentOsTrack.currentOs == "linux";
+#        WINDOWS => CurrentOsTrack.currentOs == "windows";
+#        SVOS => CurrentOsTrack.currentOs == "svos";
+#        EFI => CurrentOsTrack.currentOs == "EFI";
+#        DEFAULT;
+#    }
+#    SelectorRule ShouldPerformOsShutdown(YES, NO)
+#    {
+#        YES => CurrentOsTrack.currentOs == "linux" || CurrentOsTrack.currentOs == "EFI" || CurrentOsTrack.currentOs == "windows" || CurrentOsTrack.currentOs == "svos";
+#        NO;
+#    }
+#}

@@ -1,0 +1,49 @@
+Version 1.0;
+
+UserVars ProjectStartUp
+{
+    String PythonConsoleStartupScript = "$FUSION_PYTHON_SCRIPT_DIR\\startup.py";
+    Integer SerialTransportComPort = SerialPortSetupVars.ComPortNumber;
+}
+
+UserVars EnvConditionsPythonCommand
+{
+      
+    #Set and Read Core Ratio
+    String Set_Core_Ratio   ="ratio_control.set_core_ratio('"+ toString(FrequencyVars.AxisCurrentValue) + "') ";
+    String Read_Core_Ratio   ="ratio_control.read_core_ratio()";
+    String Set_Core_Acode_Ratio = "ratio_control.set_core_acode_ratio(" + FrequencyVars.AxisCurrentValue + ") ";
+    String Set_Ring_Ratio = "ratio_control.set_ring_ratio('"+ toString(RingVars.AxisCurrentValue) + "') ";
+    String Read_Ring_Ratio = "ratio_control.read_ring_ratio()";
+    #String Verify_Core_acode_Ratio   ="DecimalEnvironmentalConditionControl.read_condition_measured('"+ toString(FrequencyVars.AxisName) +"')";
+
+     
+    
+    #ITD Disable
+    #String Itd_Disable = "StringEnvironmentalConditionControl.set_itd('Disable_All', '" + EnableDisableCommand.Disabled + "')";
+    #String Itd_Disable = "StringEnvironmentalConditionControl.ItdDisable('IACore', '" + EnableDisableCommand.Disabled + "')";
+    
+    #MaxchineCheckExceptions
+    #String MCE_Check = "MachineCheckException.main()";
+    #String CalculateCoreVoltageMax = "DecimalEnvironmentalConditionControl.set_condition('"+ toString(VoltageVars.AxisName) +"',"+toString(VoltageVars.AxisCurrentValue)+")";
+    
+    #Set/Read Core voltage conditions
+    String Set_Core0_Voltage ="voltage_control.set_dlvr0_voltage("+ toString(VoltageVars.AxisCurrentValue) + ")";
+    String Read_Core0_Voltage= "voltage_control.measure_dlvr0_voltage()";
+    #String Set_core_voltage_vparallel ="DecimalEnvironmentalConditionControl.set_condition('"+ toString(VoltageVars.AxisName) +"', " + toString(VoltageVars.AxisCurrentValue) + ")";
+    #String Read_core_voltage_vparallel ="DecimalEnvironmentalConditionControl.read_condition_measured('"+ toString(VoltageVars.AxisName) +"')";
+    #String Set_core_voltage_vparallel_pcode ="DecimalEnvironmentalConditionControl.set_condition('"+ toString(VoltageVars.AxisName) +"', " + toString(VoltageVars.AxisCurrentValue) + ")";
+    #String Read_core_voltage_vparallel_pcode="DecimalEnvironmentalConditionControl.read_condition_measured('"+ toString(VoltageVars.AxisName) +"')";
+    
+    #String Set_Test_Program_Env     = "gnr_product_interface.set_test_program_env('"+ExperimentSetup.Test_Program_Env+"')";
+    #String PostCodeRead = "ReadPostCode('"+EnvConditionsPythonCommand.BiosBreakPointsConfig+"')";
+    #String PostCodeRead = "ReadPostCode('"+EnvConditionsPythonCommand.BiosBreakPointsConfig+"')";
+    #String BiosBreakPointsConfig = "C:\\STHI\\Fusion\\PythonScripts\\Bios_breakpoints.xlsx";
+    #String Hostname = "icxd_product_info.get_hostname('"+EnvConditionsPythonCommand.Self_Product_name+"')";
+    #String ScanQdf = "icxd_product_info.scan_qdf('"+EnvConditionsPythonCommand.Self_Product_name+"')";
+    #String get_all_info = "icxd_product_info('')";
+    #String ReadULT_U1 = "icxd_product_info.decode_ult1('CPU')";
+    #String ReadULT_U2 = "icxd_product_info.decode_ult2('PCH')";
+    #String Self_Product_name = "IcelakexD";
+   
+}

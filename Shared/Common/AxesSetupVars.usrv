@@ -1,0 +1,99 @@
+Version 1.0;
+
+UserVars FrequencyVars
+{
+    String AxisName = "Frequency";
+    Integer Step = 0;
+    String StopOn = "FAIL";
+    Integer AxisExitPort = 21;
+    String AxisCurrentValue = "20";
+    
+
+    Array<String> FixedValue = ['20'];
+
+    ## ListOfValues - list / range of values to set for AVX mode for Shmoo Multi-D
+    #Array<String> ListOfValues = ['8','16','20','30','48','50','54','56']; 
+    Array<String> ListOfValues = ['20']; 
+
+    ## Value - values to set for AVX mode for Search
+    Array<String> Value = ['20'];
+
+    ## AxisPointSetup - to mark point as PASS or FAIL SetupPoint
+    Boolean AxisPointSetup = False;
+
+    ## AxisMaxAllowedSetupFailures - setting up Max Allowed Setup Failures for Search
+    Integer AxisMaxAllowedSetupFailures = 0;
+
+    ## AxisMaxAllowedConsecutiveSetupFailures - setting up Max Allowed Consecutive Setup Failures for Search
+    Integer AxisMaxAllowedConsecutiveSetupFailures = 0;
+
+    ## AxisMaxAllowedStopPoints - setting up Max Allowed Stop Points for Shmoo
+    Integer AxisMaxAllowedStopPoints = 0;
+
+    ## AxisMaxAllowedStopPoints - setting up Max Allowed Consecutive Points for Shmoo
+    Integer AxisMaxAllowedConsecutiveStopPoints = 0;
+
+    ## SafeRegionMaxValue - setting up values for safe region
+    Integer SafeRegionMaxValue = 0;
+    Integer SafeRegionMinValue = 0;
+}
+
+UserVars TemperatureVars
+{
+    String AxisName = "Temperature";
+    Integer Step = 0;
+    String StopOn = "FAIL";
+    String MinValue = "30";
+    
+  
+
+    Integer AxisExitPort = 23;
+    String AxisCurrentValue = "75";
+
+    Array<String> FixedValue = ['75'];
+    Array<String> ListOfValues = ['75'];
+    Boolean AxisPointSetup = False;
+    Integer AxisMaxAllowedSetupFailures = 0;
+    Integer AxisMaxAllowedConsecutiveSetupFailures = 0;
+
+    Integer AxisMaxAllowedStopPoints = 0;
+    Integer AxisMaxAllowedConsecutiveStopPoints = 0;
+    
+    Integer SafeRegionMaxValue = 0;
+    Integer SafeRegionMinValue = 0;
+}
+
+UserVars VoltageVars
+{
+    String AxisName = "Voltage";
+    Integer AxisExitPort = 25;
+    Double Step = 0.01;
+    #String AxisCurrentValue = "1.2"; 
+    String AxisCurrentValue = "0.62"; 
+    String StopOn = "FAIL";
+    Boolean AxisPointSetup = False;
+    Integer AxisMaxAllowedSetupFailures = 0;
+    Integer AxisMaxAllowedConsecutiveSetupFailures=  0;
+
+    Integer AxisMaxAllowedStopPoints = 0;
+    Integer AxisMaxAllowedConsecutiveStopPoints = 0;
+
+    # Safe Region Voltage Set for Search
+    Double SafeRegionMaxValue = 0.7;
+    #Double SafeRegionMinValue = 0.6;
+    Double SafeRegionMinValue = 0.4;
+
+    #Boolean ProcessingLimiters = False;
+
+    Double MaxOffsetValue = 0.04;
+    Double MinOffsetValue = -0.03;
+    
+}
+
+UserVars RingVars
+{
+    String AxisName = "Ring";
+    String AxisCurrentValue = "14";
+    Array<String> FixedValue = ['14'];
+    Array<String> ListOfValues = ['14','20']; ##more valid ring ratios to be added later
+}

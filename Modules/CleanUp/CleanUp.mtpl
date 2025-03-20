@@ -1,0 +1,17 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+
+TestPlan CleanUp;
+
+Test DecisionNode DecisionNode
+{
+	DefaultDecisionExitPort = 1 ;
+	Timeout = "0:00:30";
+}
+
+Flow CleanUp {
+
+#TODO add FlowItem definition
+
+}

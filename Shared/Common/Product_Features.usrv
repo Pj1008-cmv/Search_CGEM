@@ -1,0 +1,30 @@
+Version 1.0;
+
+### Product_Features.usrv
+### THIS IS A MANDATORY COLLECTION
+### USER-DEFINED BOOLEAN FEATURES TO BE USED IN CONTENT MANAGEMENT AND IN FLOW/ENV. CONTROL
+
+UserVars ProductFeatures
+{
+    ###Boolean _2Core = (QDFMatrixFeatures.FuncCore == 2);
+    ### Boolean _2Core = (QDFMatrixRC.FuncCoreRule(2,4,6,8) == 2);
+    ###Boolean _4Core = (QDFMatrixFeatures.FuncCore == 4);
+
+    ###Boolean GT0 = (QDFMatrixFeatures.GT == 0);
+    ###Boolean GT1 = (QDFMatrixFeatures.GT == 1);
+    ###Boolean GT2 = (QDFMatrixFeatures.GT == 2);
+
+    ### Users can define features based on a RANGE of values:
+    ### Boolean FewCores = (QDFMatrixFeatures.FuncCore <= 4);
+    ### Boolean ManyCores = (QDFMatrixFeatures.FuncCore > 4);
+
+    ### Users can combine different features into a single feature:
+    ### Boolean FewCores_GT2 = (QDFMatrixFeatures.FuncCore <= 4) && (QDFMatrixFeatures.GT = "GT2");
+    ### Boolean Fast = (QDFMatrixFeatures.FuncCore = 8) && (QDFMatrixFeatures.GT = "GT2");
+
+    ### Boolean Feature_1_Specific_Attribute = (QDFMatrixFeatures.Feature_1 == "F1b");
+    ### Boolean Feature_2_Specific_Attribute = (QDFMatrixFeatures.Feature_2 == "F2c");
+    ### Boolean Feature_4_Specific_Attribute = (QDFMatrixFeatures.Feature_4 == "F4c");
+
+    ### ... Additional Boolean Features Definitions ...
+}

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--File is auto-generated, any manual edits can be overwritten.-->
+<!DOCTYPE HDMTFlowItemCoor []>
+<HDMTFlowItemCoor>
+  <FlowItem name="SSF::SSF.RunSSF_ShmooIACore" X="55" Y="85" />
+  <FlowItem name="SSF::INIT.Initialization" X="25" Y="25" />
+  <FlowItem name="SSF::SSF.PrepareSetupForSSF" X="45" Y="65" />
+  <FlowItem name="SSF::SSF.PreFlightFlow" X="35" Y="45" />
+  <FlowItem name="SSF::SSF.INIT" X="-202" Y="86" />
+  <FlowItem name="SSF::SSF.SearchMTPL" X="25" Y="25" />
+</HDMTFlowItemCoor>

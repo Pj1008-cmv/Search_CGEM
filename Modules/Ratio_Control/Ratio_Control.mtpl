@@ -1,0 +1,102 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+
+TestPlan Ratio_Control;
+
+#TODO add Import statements
+Test PythonCommand Set_Core_Frequency
+{
+	Command  = EnvConditionsPythonCommand.Set_Core_Ratio;
+	Timeout = "0:00:30";
+}
+Test PythonCommand Set_Core_Acode_ratio
+{
+	Command = EnvConditionsPythonCommand.Set_Core_Acode_Ratio;
+	Timeout = "0:00:30";
+}
+Test PythonCommand Set_Ring_Frequency
+{
+	Command = EnvConditionsPythonCommand.Set_Ring_Ratio;
+	Timeout = "0:00:30";
+}
+Test PythonCommand Read_Core_Ratio
+{
+	Command = EnvConditionsPythonCommand.Read_Core_Ratio;
+	Timeout = "0:00:30";
+}
+Test PythonCommand Read_Ring_Ratio
+{
+	Command = EnvConditionsPythonCommand.Read_Ring_Ratio;
+	Timeout = "0:00:30";
+}
+Test DecisionNode DecisionNode
+{
+	DefaultDecisionExitPort = 1;
+	Timeout = "0:00:30";
+}
+
+Flow set_core_ratio 
+{
+	FlowItem Set_Core_Frequency Set_Core_Frequency
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 { Property PassFail = "Pass"; Return 1; }
+	}
+}
+
+Flow set_ring_ratio
+{
+	FlowItem Ring_Ratio_Selector DecisionNode
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 {
+			Property PassFail = "Pass";
+			Set RingVars.AxisCurrentValue = RingCollection.RingRatio("8", "14", "20", "26", "34", "34");
+			GoTo Set_Ring_Frequency;
+		}
+	}
+
+	FlowItem Set_Ring_Frequency Set_Ring_Frequency
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 { Property PassFail = "Pass"; Return 1; }
+	}
+}
+
+
+Flow set_acode_core_ratio 
+{
+	FlowItem Set_Core_Acode_ratio Set_Core_Acode_ratio
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0{ Property PassFail = "Fail"; Return 0;}
+		Result 1{ Property PassFail = "Pass"; Return 1;}
+	}
+}
+
+Flow read_ratios
+{
+	FlowItem Read_Core_Ratio Read_Core_Ratio
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0{ Property PassFail = "Fail"; Return 0;}
+		Result 1{ Property PassFail = "Pass"; GoTo Read_Ring_Ratio;}
+	}
+
+	FlowItem Read_Ring_Ratio Read_Ring_Ratio
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0{ Property PassFail = "Fail"; Return 0;}
+		Result 1{ Property PassFail = "Pass"; Return 1;}
+	}
+}

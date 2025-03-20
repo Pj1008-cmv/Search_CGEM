@@ -1,0 +1,196 @@
+Version 1.0;
+
+## ----------  Setup for IA Domain (ICXD) ---------- ##
+
+## ICXD - Content Execution Setup -- ##
+
+UserVars DecisionNode
+{
+	Boolean RebootAndReapplySetup = False;
+}
+UserVars IAContentSetup
+{
+	#ContentGroup ContentGroupName = CMV_ARL8B32A_ARL8B32A_H_1C1;
+	ContentGroup ContentGroupName = CMV_ARLB8C_ARLB8C_H_1C5;
+	TimeSpan Timeout = "48:20:20";
+	String BootStage = "EFI_71";
+	Integer MaxNumberOfTestRuns = 1;
+	Integer RequiredNumberOfPasses = 1;
+	Integer MaxAllowedFailures = 0;
+	Integer MaxAllowedConsecutiveFailures = 0;
+	Boolean PostFail = True;
+	Boolean PostPass = False;
+	String VvarRegex =  '<Vvar\s+Number="(?<number>0x[a-fA-F0-9]+)"\s+Value="(?<value>0x[a-fA-F0-9]+)"\s+\/>';
+}
+UserVars IAContentSetup_SSF
+{
+	#ContentGroup ContentGroupName = CMV_ARL8B32A_ARL8B32A_H_1C1;
+	ContentGroup ContentGroupName = CMV_ARLB8C_ARLB8C_H_1C5;
+	TimeSpan Timeout = "24:20:20";
+	String BootStage = "EFI_71";
+	Integer MaxNumberOfTestRuns = 1;
+	Integer RequiredNumberOfPasses = 1;
+	Integer MaxAllowedFailures = 0;
+	Integer MaxAllowedConsecutiveFailures = 0;
+	Boolean PostFail = True;
+	Boolean PostPass = False;
+	String VvarRegex =  '<Vvar\s+Number="(?<number>0x[a-fA-F0-9]+)"\s+Value="(?<value>0x[a-fA-F0-9]+)"\s+\/>';
+}
+
+UserVars IAAVXModeSetup
+{
+	String AVX128 = "128";
+	String AVX256 = "256";
+	String AVX512 = "512";
+	String AMX = "AMX";
+}
+
+UserVars IAFrequencySetup
+{
+	String CoreRatio8 = "8";
+	String CoreRatio16 = "16";
+	String CoreRatio20 = "20";
+	String CoreRatio25 = "25";
+	String CoreRatio30 = "30";
+    String CoreRatio48 = "48";
+	String CoreRatio55 = "55";
+	String CoreRatio56 = "56";
+}
+
+UserVars IARingSetup
+{
+	String RingRatio8 = "8";
+	String RingRatio14 = "14";
+	String RingRatio20 = "20";
+	String RingRatio28 = "28";
+	String RingRatio34 = "34";
+	String RingRatio39 = "39";
+}
+
+UserVars IATemperatureSetup
+{
+	String Temp75 ="75";
+	String Temp30 ="30";
+	Integer Temp75_int = 75;  #spl integer value created so that the same uservar could be used in the intec vars.usrv to set the temperature
+	Integer Temp30_int = 30;  #safe temp 
+}
+
+UserVars IAVoltageSetup
+{
+	Double MaxVoltageCR_8 = 0.7;
+	Double MaxVoltageCR_16 = 0.71;
+	Double MaxVoltageCR_20 = 0.62;
+	Double MaxVoltageCR_24 = 0.82;
+	Double MaxVoltageCR_30 = 0.92;
+	Double MaxVoltageCR_35 = 1.07;
+    Double MaxVoltageCR_48 = 1.2;
+	
+	Double MinVoltage = 0.55;
+
+}
+
+UserVars Reset
+{
+	Array<String>ResetValues = ["8"];
+}
+UserVars IAf1f2Setup
+{
+	Array<String>ShmooFreqValues = ["15","20"];
+	Array<String>SearchFreqValue = ["15"];
+	Array<String>TemperatureValues = ["90"];
+}
+
+UserVars IAf3f4Setup
+{
+	Array<String>ShmooFreqValues = ["30","40"];
+	Array<String>SearchFreqValue = ["30"];
+	Array<String>TemperatureValues = ["75"];
+}
+
+UserVars IAf5f6Setup
+{
+	Array<String>ShmooFreqValues = ["48","50"];
+	Array<String>SearchFreqValue = ["48"];
+	Array<String>TemperatureValues = ["50"];
+}
+
+UserVars IASSFSetup
+{
+	String ShmooExperimentName = "IACore_SSF";
+	String ShmooDomainName = "IACore";
+	Array<String> ShmooLimiterDestination = null;
+	Array<ShmooAxis> IAShmooAxes = [
+          ARLSShmooAxes.FrequencyAxis,
+		  ARLSShmooAxes.TemperatureAxis,
+		  ARLSShmooAxes.VoltageAxis
+		];
+	Boolean IsPostScrubEnabled = False;
+
+	## For multi-dimension setup
+	#Array<String>FrequencyValues = [IAFrequencySetup.CoreRatio20,IAFrequencySetup.CoreRatio30];
+	Array<String>FrequencyValues = ["30","48"];
+	Array<String>TemperatureValues = ["75"];
+	Array<String>RingValues = ["20","28"];
+
+	## Axis Name
+	String AVXModeAxisName = "Set_AVX_Mode";
+	String FrequencyAxisName = "Core_Ratio";
+	String TemperatureAxisName = "T_case";
+	String VoltageAxisName = "Core0";
+	String RingAxisName = "Ring_Ratio";
+
+	## Only Shmoo CGEM required VFCurve to be defined. Do make sure that the VF Curve names are aligned with the Axis Name for that Shmoo / Search run
+	String VFCurveVoltageName = IASSFSetup.VoltageAxisName;
+	String VFCurveFrequencyName = IASSFSetup.FrequencyAxisName;	
+}
+
+UserVars IASearchSetup
+{
+	String SearchExperimentName = "IACore_Search";
+	String SearchDomainName = "IACore";
+	#Array<String> SearchLimiterDestination = null;
+	Array<SearchAxis> IASearchAxes = [
+          ARLSSearchAxes.FrequencyAxis,
+		  ARLSSearchAxes.TemperatureAxis,
+		  ARLSSearchAxes.VoltageAxis
+		];
+	Boolean SearchForVmin = True;
+	Integer NumberOfLimiters = 3;
+
+	Boolean IsSearchSSFEnabled = True;
+	#Boolean IsSearchSSFEnabled = False;
+
+	Boolean IsPostScrubEnabled = True;
+
+	#new offset value to verify SSF vmin
+	Double MinOffsetSearch = -0.01;
+	Double MaxOffsetSearch = 0.04;
+	Double Step = 0.01;
+	String StopOnFail = "FAIL";
+
+	## For multi-dimension setup - to note : ## For Search, outer Axis only can be set to ONE(1) value
+	Array<String>FrequencyValue = ["30"];
+	Array<String>TemperatureValue = ["75"];
+	Array<String>RingValues = [IARingSetup.RingRatio14];
+
+	## Axis Name
+	String FrequencyAxisName = "Core_Ratio";
+	String TemperatureAxisName = "T_case";
+	String VoltageAxisName = "Core0";
+	String RingAxisName = "Ring_Ratio";
+
+	
+	String VFCurveVoltageName = IASearchSetup.VoltageAxisName;
+	String VFCurveFrequencyName = IASearchSetup.FrequencyAxisName;	
+}
+
+UserVars IAPostScrubSetup
+{
+	String PostScrubExperimentName = "IACore_PostScrub";
+	String PostScrubDomainName = "IACore";
+	Array<String> PostScrubLimiterDestination = null;
+	Boolean IsPosScrubEnabled = True;
+	Double MinOffsetPostScrub = 0.03;
+	Double MaxOffsetPostScrub = -0.03;
+}
+

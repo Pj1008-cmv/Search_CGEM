@@ -1,0 +1,51 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+
+TestPlan PredefinedFlows;
+
+Test DelayTest dummytest {
+	Delay = "0:00:10";
+	Timeout = "0:00:30";
+}
+
+Flow LotStart {
+	FlowItem Fi1 LotStart::LotStartOps {
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result  1 { Property PassFail = "Pass"; Return  1; }
+	}
+}
+Flow UnitStart {
+	FlowItem Fi1 UnitStart::UnitStartOps {
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result  1 { Property PassFail = "Pass"; Return  1; }
+	}
+}
+
+Flow Main {
+	
+}
+
+Flow UnitEnd {
+	FlowItem Fi1 UnitEnd::UnitEndTest {
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  1 { Property PassFail = "Pass"; Return  1; }
+	}
+}
+Flow LotEnd {
+	FlowItem Fi1 LotEnd:: LotEnd {
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  1 { Property PassFail = "Pass"; Return  1; }
+	}
+}
+
+#FlowDefs {
+#	# InitFlow = INIT;
+#	LotStartFlow  = LotStart;
+#	UnitStartFlow = UnitStart;
+#	MainFlow      = Main;
+#	UnitEndFlow   = UnitEnd;
+#	LotEndFlow    = LotEnd;
+#}

@@ -1,0 +1,187 @@
+Version 1.0;
+
+UserVars SearchExperimentSetup
+{
+	String SearchExperimentName = "Search";
+	String SearchDomainName = "IACore";
+
+}
+
+UserVars VfCurveSetupVars
+{
+	String VoltageName = "Voltage";
+	String FrequencyName = "Frequency";
+}
+
+UserVars SearchParam
+{
+	Boolean IsSearchSSFEnabled = True;
+
+	#String SearchLimiterDestination = nameof(SearchParam.SweetSpotLimiters);
+	String ShmooLimiterDestination = nameof(SearchParam.SweetSpotLimiters);
+    String SearchLimiterDestination = nameof(SearchParam.SearchLimiters);
+    Array<ShmooLineLimiter> SearchLimiters = null;
+	Array<ShmooLineLimiter> SweetSpotLimiters = null;
+	Array<ShmooLineLimiter> PostScrubLimiters = null;
+
+	#dummy created for testing
+	Array<ShmooLineLimiter> nullLimiters = null;
+    ## SearchForMin - To decide to SearchForMin or SearchForMax
+    Boolean SearchForMin = True;
+
+	Boolean IsNoLimiterSSFEnabled = False; 
+	#if no limiter is found from SSF, then this gets activated in main TP during search setup
+
+    ## NiumberOfLimiters -- to set up how many limiters (worst) need to be reported from Search
+    Integer NumberOfLimiters = 3;
+
+}
+
+UserVars SearchAxesSetupVars
+{
+	Array<SearchAxis> IACoreSearchAxes = [
+          ARLSSearchAxes.FrequencyAxis,
+		  ARLSSearchAxes.TemperatureAxis,
+		  ARLSSearchAxes.VoltageAxis
+		];	
+
+}
+
+UserVars ARLSSearchAxes
+{
+	SearchAxis FrequencyAxis = {
+				AxisName = FrequencyVars.AxisName;
+				AxisCoordinates = 
+				[ 
+					{ 
+						IsActive = True;
+						Values = FrequencyVars.ListOfValues;
+						Step = FrequencyVars.Step;
+						StopOn = FrequencyVars.StopOn;
+					}
+					
+				];
+
+				# -- debug -- #
+				AxisSetupFlowExitPort = FrequencyVars.AxisExitPort;
+				AxisValueToSet = nameof(FrequencyVars.AxisCurrentValue);
+				AxisSetupPassed = nameof(FrequencyVars.AxisPointSetup);
+				AxisMaxAllowedSetupFailures = FrequencyVars.AxisMaxAllowedSetupFailures;    
+				AxisMaxAllowedConsecutiveSetupFailures = FrequencyVars.AxisMaxAllowedConsecutiveSetupFailures;
+	};
+
+	SearchAxis TemperatureAxis = {
+			AxisName = TemperatureVars.AxisName;
+			AxisCoordinates = 
+			[ 
+				{ 
+					IsActive = True; 
+					Values = TemperatureVars.ListOfValues;
+					Step = TemperatureVars.Step;
+					StopOn = TemperatureVars.StopOn;
+				}
+			];
+			AxisSetupFlowExitPort = TemperatureVars.AxisExitPort;
+			AxisValueToSet = nameof(TemperatureVars.AxisCurrentValue);
+			AxisSetupPassed = nameof(TemperatureVars.AxisPointSetup);
+			AxisMaxAllowedSetupFailures = TemperatureVars.AxisMaxAllowedSetupFailures;    
+			AxisMaxAllowedConsecutiveSetupFailures = TemperatureVars.AxisMaxAllowedConsecutiveSetupFailures;
+	};
+
+	SearchAxis VoltageAxis = {
+			AxisName = VoltageVars.AxisName;
+			AxisCoordinates = 
+			[ 
+				
+				{ 
+					IsActive = SearchParam.IsNoLimiterSSFEnabled == True && FrequencyVars.AxisCurrentValue == "15"; 
+					Values = [0.52,0.45];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+					IsActive = SearchParam.IsNoLimiterSSFEnabled == True && FrequencyVars.AxisCurrentValue == "20"; 
+					Values = [0.60, 0.45];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+					IsActive = SearchParam.IsNoLimiterSSFEnabled == True && FrequencyVars.AxisCurrentValue == "30"; 
+					Values = [0.76, 0.66];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+					IsActive = SearchParam.IsNoLimiterSSFEnabled == True && FrequencyVars.AxisCurrentValue == "40"; 
+					Values = [0.90, 0.66];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+					IsActive = SearchParam.IsNoLimiterSSFEnabled == True && FrequencyVars.AxisCurrentValue == "48";
+					Values = [0.95, 0.85];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+					IsActive = SearchParam.IsNoLimiterSSFEnabled == True && FrequencyVars.AxisCurrentValue == "50"; 
+					Values = [1.00, 0.85];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+					IsActive = SearchParam.IsNoLimiterSSFEnabled == False; ## Limiter avb from SSF
+					Offset = [-0.01, 0.04];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				}
+				#{ 
+				#	IsActive = SearchParam.IsSearchSSFEnabled == False && FrequencyVars.AxisCurrentValue == "8"; 
+				#	Values = [0.6, 0.48];
+				#	Step = VoltageVars.Step;
+				#	StopOn = VoltageVars.StopOn;
+				#},
+				#{ 
+				#	IsActive = SearchParam.IsSearchSSFEnabled == False && FrequencyVars.AxisCurrentValue == "16"; 
+				#	Values = [0.6, 0.48];
+				#	Step = VoltageVars.Step;
+				#	StopOn = VoltageVars.StopOn;
+				#},
+				#{ 
+				#	IsActive = SearchParam.IsSearchSSFEnabled == False && FrequencyVars.AxisCurrentValue == "20"; 
+				#	Values = [0.6, 0.54];
+				#	Step = VoltageVars.Step;
+				#	StopOn = VoltageVars.StopOn;
+				#},
+				#{ 
+				#	IsActive = SearchParam.IsSearchSSFEnabled == False && FrequencyVars.AxisCurrentValue == "30"; 
+				#	Values = [0.72, 0.54];
+				#	Step = VoltageVars.Step;
+				#	StopOn = VoltageVars.StopOn;
+				#},
+				#{ 
+				#	IsActive = SearchParam.IsSearchSSFEnabled == False && FrequencyVars.AxisCurrentValue == "48"; 
+				#	Values = [0.6, 0.48];
+				#	Step = VoltageVars.Step;
+				#	StopOn = VoltageVars.StopOn;
+				#},
+				#{ 
+				#	IsActive = SearchParam.IsSearchSSFEnabled == False && FrequencyVars.AxisCurrentValue == "55"; 
+				#	Values = [0.6, 0.48];
+				#	Step = VoltageVars.Step;
+				#	StopOn = VoltageVars.StopOn;
+				#},
+                #{ 
+				#	IsActive = SearchParam.IsSearchSSFEnabled == False && FrequencyVars.AxisCurrentValue == "56";
+				#	Values = [0.6, 0.48];
+				#	Step = VoltageVars.Step;
+				#	StopOn = VoltageVars.StopOn;
+				#}
+			];
+			AxisSetupFlowExitPort = VoltageVars.AxisExitPort;
+			AxisValueToSet = nameof(VoltageVars.AxisCurrentValue);
+			AxisSetupPassed = nameof(VoltageVars.AxisPointSetup);
+			AxisMaxAllowedSetupFailures = VoltageVars.AxisMaxAllowedSetupFailures;
+			AxisMaxAllowedConsecutiveSetupFailures = VoltageVars.AxisMaxAllowedConsecutiveSetupFailures;
+	};	
+}

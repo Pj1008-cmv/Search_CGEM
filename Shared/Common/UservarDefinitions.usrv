@@ -1,0 +1,41 @@
+Version 1.0;
+
+UserVars SCVars
+{
+	String MODE = "SPS";
+	String SC_DEVICE = "4XXXXX";
+	String SC_ENGID = "XX";
+	String SC_FACILITYID = "VF";
+	String SC_LOCN = "7297";
+	String SC_LOTNAME = "Y1234567E";
+	String SC_LOTTYPE = "ENG";
+	String SC_OPTYPE = "CMV";
+	String SC_PACKAGE = "XX"; 
+	String SC_REV = "X";
+	String SC_SSPEC = "QDF1";
+	String SC_STEP = "A";
+	String SC_SUMMARY_NAME = "1A";
+	String SC_TESTERID = "TESTER_X";
+	String SC_TPNAME = "PROGRAM_X";
+	String ActiveSocketId = "1";
+    String CellID = "A301";
+	String DUTId = "1";
+	String OWNREMAIL = "priyanka.j@intel.com"; 
+	String TestMode = "CMV"; 
+	String VisualId = "";
+	String qdf = "";
+	String ULT = "";
+}
+
+## need to verify the deets
+UserVars Ults
+{
+    Ult Cpu = Ult
+    {
+        SortLot = "L7258180";
+        SortWaferID = 246;
+        SortX = 19;
+        SortY = -2;
+    };
+}
+

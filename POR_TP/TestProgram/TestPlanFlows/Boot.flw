@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--File is auto-generated, any manual edits can be overwritten.-->
+<!DOCTYPE HDMTFlowItemCoor []>
+<HDMTFlowItemCoor>
+  <FlowItem name="TestPlanFlows::INIT.Initialization" X="25" Y="25" />
+  <FlowItem name="TestPlanFlows::UNIT_END_FLOW.UnitEnd" X="25" Y="25" />
+  <FlowItem name="TestPlanFlows::Boot.INIT" X="25" Y="25" />
+  <FlowItem name="TestPlanFlows::Boot.
+			
+	
+Transition" X="45" Y="65" />
+  <FlowItem name="TestPlanFlows::Boot.BootToEFI" X="55" Y="85" />
+  <FlowItem name="TestPlanFlows::Boot.UNIT_END_FLOW" X="65" Y="105" />
+</HDMTFlowItemCoor>

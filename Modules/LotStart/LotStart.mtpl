@@ -1,0 +1,25 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+
+TestPlan LotStart;
+
+#TODO add Import statements
+Test LotStart LotStartOps
+{
+	Timeout = "0:00:30";
+}
+#TODO add Tests definitions
+
+Flow LotStart 
+{
+	FlowItem LotStart LotStartOps
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 { Property PassFail = "Pass"; Return 1;}
+	}
+
+
+}

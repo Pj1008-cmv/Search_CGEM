@@ -1,0 +1,13 @@
+Version 1.0;
+
+### Test_Operations.usrv
+### THIS IS A MANDATORY COLLECTION
+
+UserVars TestOperations
+{
+     Boolean SPM         = (SCVars.SC_LOCN=="7295" || SCVars.SC_LOCN=="7411" || SCVars.SC_LOCN=="7775" || SCVars.SC_LOCN=="6305" || SCVars.SC_LOCN=="6317" || SCVars.SC_LOCN=="7789");
+
+     Boolean SPS         = (SCVars.SC_LOCN=="6508" || SCVars.SC_LOCN=="7297" || SCVars.SC_LOCN=="7421" || SCVars.SC_LOCN=="7777" || SCVars.SC_LOCN=="6319" || SCVars.SC_LOCN=="6316");
+     
+     Boolean CMV         = (SCVars.SC_LOCN=="6337" || SCVars.SC_LOCN=="6338" || SCVars.SC_LOCN=="6339" || SCVars.SC_LOCN=="6340" || SCVars.SC_LOCN=="6341" || SCVars.SC_LOCN=="6342" || SCVars.SC_LOCN=="6343" || SCVars.SC_LOCN=="6344" || SCVars.SC_LOCN=="6345" || SCVars.SC_LOCN=="6346");
+}

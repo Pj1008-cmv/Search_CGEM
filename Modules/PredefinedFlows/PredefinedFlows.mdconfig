@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Module>
+    <ProductCodeName>
+      <!-- INSERT PRODUCT NAME HERE, for example TIGER_LAKE -->
+    </ProductCodeName>
+    <TestProgramDescriptiveName>
+      <!-- INSERT Test Program Descriptive Name, for example 13G -->
+    </TestProgramDescriptiveName>
+    <TeamEmailAddress>
+      <!-- INSERT TEAM EMAIL, for example: XYZ_TP_Team@intel.com -->
+    </TeamEmailAddress>
+    <PPVCMVType>
+      <!-- INSERT TEAM type, for example: PPV -->
+    </PPVCMVType>
+
+  </Module>
+</Configuration>

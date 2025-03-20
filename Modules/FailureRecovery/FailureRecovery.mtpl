@@ -1,0 +1,172 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+
+TestPlan FailureRecovery;
+
+#TODO add Import statements
+Test DelayTest NoOpTest #(replaced)
+{
+  Delay = "00:00:00";
+  Timeout = "00:00:01";
+}
+#TODO add Tests definitions
+Test DecisionNode DecisionNode
+{
+	DefaultDecisionExitPort = 1 ;
+	Timeout = "0:00:30";
+}
+Test PythonCommand StopProfiling
+{
+	Command = "profiler.stop_profiling()";
+	Timeout = "0:00:30";
+}
+Test PythonCommand ContentNamePrint
+{
+	Command = "print('" + ContentName.LastContentNameExecuted + "')";
+	Timeout = "0:00:30";
+}
+Test PythonCommand StartProfiling
+{
+	Command = "profiler.start_profiling([aizatprofiling.Ring_Ratio_Profile , aizatprofiling.Core_Ratio_Profile, aizatprofiling.Max_DTS_Profile, aizatprofiling.VCC_CORE0, aizatprofiling.Intec_TC_Profile, aizatprofiling.Intec_SP_Profile, aizatprofiling.Intec_FB_Profile])";
+	Timeout = "0:00:02";
+}
+
+Flow PostPassFailActionsFlow 
+{
+	FlowItem ContentNamePrint ContentNamePrint
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+		Result  1 { Property PassFail = "Pass"; GoTo StopProfiling ; }
+	}
+	##	stop profiling irrespective of pass/fail	##
+	FlowItem StopProfiling StopProfiling 
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+		Result  1 { Property PassFail = "Pass"; GoTo  ContentFailuresDecisionNode; }
+	}
+
+	#-- Ruun platform recovery when content Fail
+	FlowItem ContentFailuresDecisionNode DecisionNode
+	{
+		Result -2 { Property PassFail = "Fail"; #HW FAIL
+					#Return -2; 
+					GoTo PyError;
+					}
+		Result -1 { Property PassFail = "Fail"; #HANG 2
+					SmartExitPort => ContentUsrv.Status == "Hang"; GoTo PyError;
+					}
+		Result  0 { Property PassFail = "Fail";
+					Return  0; 
+					}
+		Result 1 { Property PassFail = "Pass"; #PASS
+				   SmartExitPort => ContentUsrv.LastContentResult == "Pass"; 
+				   GoTo StartProfiling;
+					}
+		Result  2 { Property PassFail = "Pass"; 
+					SmartExitPort => ContentUsrv.Status == "Failed"; #FAIL 0
+					GoTo StartProfiling;
+					}
+		Result  3 { Property PassFail = "Pass"; 
+					SmartExitPort => ContentUsrv.Status == "Timeout"; #TIMEOUT - SOFT 1
+					#GoTo StartProfiling;
+					GoTo PyError; ##testing now - to revive platform
+					}
+		Result 4  { Property PassFail = "Pass"; 
+					SmartExitPort => ContentUsrv.Status == "Undefined"; #UNDEFINED BIN 9
+					GoTo StartProfiling;
+					}
+	}
+
+	FlowItem PyError PreFlightFlow::PythonConsoleStartupScript
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 { Property PassFail = "Pass"; GoTo FullRecoveryFlow;}
+	}
+
+	FlowItem StartProfiling StartProfiling
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+		Result  1 { Property PassFail = "Pass"; Return 1; }
+	}
+
+	FlowItem FullRecoveryFlow FullRecoveryFlow
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+		Result  1 {
+			Property PassFail = "Pass"; 
+			Set DecisionNode.RebootAndReapplySetup = True;
+			Return  1; }
+	}
+}
+
+# for seed hang/stuck
+Flow FullRecoveryFlow
+{
+	FlowItem BootFromPowerOffToEfi BootStageTransition::BootStageTransition 
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 { Property PassFail = "Pass"; GoTo SetCoreRatioFlow; }
+	}
+	FlowItem SetCoreRatioFlow Ratio_Control::set_core_ratio
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2;  }
+		Result -1 { Property PassFail = "Fail"; Return -1;  }
+		Result  0 { Property PassFail = "Fail"; Return 0;  }
+		Result  1 { Property PassFail = "Pass"; GoTo SetupRing;  }
+	}
+	FlowItem SetupRing Ratio_Control::set_ring_ratio
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0;}
+		Result 1 { Property PassFail = "Pass"; GoTo TemperatureFlow;}
+	}
+	FlowItem TemperatureFlow Intec::Intec
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2;  }
+		Result -1 { Property PassFail = "Fail"; Return -1;  }
+		Result  0 { Property PassFail = "Fail"; Return 0;  }
+		Result  1 { Property PassFail = "Pass"; GoTo EFI;  }
+	}
+	FlowItem EFI EFI::EFI
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2;  }
+		Result -1 { Property PassFail = "Fail"; Return -1;  }
+		Result  0 { Property PassFail = "Fail"; Return 0;  }
+		Result  1 { Property PassFail = "Pass"; GoTo SetAcodeFlow;  }
+	}
+	FlowItem SetAcodeFlow Ratio_Control::set_acode_core_ratio
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2;  }
+		Result -1 { Property PassFail = "Fail"; Return -1;  }
+		Result  0 { Property PassFail = "Fail"; Return 0;  }
+		Result  1 { Property PassFail = "Pass"; GoTo ReadRatios;  }
+	}
+	FlowItem ReadRatios Ratio_Control::read_ratios
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail";  Return 0; }
+		Result 1 { Property PassFail = "Pass";  GoTo SetCoreVoltage; }
+	}
+	FlowItem SetCoreVoltage CoreVoltage::CoreVoltage
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2;  }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0;  }
+		Result  1 { Property PassFail = "Pass"; Return 1; }
+	}
+}

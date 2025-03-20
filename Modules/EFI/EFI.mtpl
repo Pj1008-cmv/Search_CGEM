@@ -1,0 +1,28 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+
+TestPlan EFI;
+
+#TODO add Import statements
+
+#TODO add Tests definitions
+
+Test PythonCommand Start_CdieToEfi
+{
+	Command = "BootStageTransitions._from_cdie_fusebreak_to_efi()";
+	Timeout = "00:08:00";
+}
+
+
+
+Flow EFI 
+{  
+	FlowItem Start_CdieToEfi Start_CdieToEfi
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result  0 { Property PassFail = "Fail"; Return  0; }
+		Result  1 { Property PassFail = "Pass"; Return 1;}
+	}
+}

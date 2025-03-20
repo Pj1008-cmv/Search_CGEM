@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--File is auto-generated, any manual edits can be overwritten.-->
+<!DOCTYPE HDMTFlowItemCoor []>
+<HDMTFlowItemCoor>
+  <FlowItem name="Intec::Intec.ResetAllSafetyEvents" X="25" Y="25" />
+  <FlowItem name="Intec::Intec.LoadConfiguration" X="35" Y="45" />
+  <FlowItem name="Intec::Intec.EnableSensorsAtBootTransition" X="45" Y="65" />
+  <FlowItem name="Intec::Intec.GetEnabledSensors" X="55" Y="85" />
+  <FlowItem name="Intec::Intec.SetClosedLoopControlAtBootTransitions" X="65" Y="105" />
+  <FlowItem name="Intec::Intec.GetFeedbackTemperature" X="75" Y="125" />
+</HDMTFlowItemCoor>

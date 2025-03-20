@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <CustomProjectExtensionsPath Condition=" '$(CustomProjectExtensionsPath)' == '' ">$(AguilaCustomProjectPath)\</CustomProjectExtensionsPath>
+    <ProjectGuid>378473ee-414f-445f-b5ac-56fd1eec5688</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(CustomProjectExtensionsPath)Aguila.ProjectSystem.Module.props" />
+  <Import Project="$(CustomProjectExtensionsPath)Aguila.ProjectSystem.Module.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\Common\Common.sysctpproj" />
+  </ItemGroup>
+</Project>

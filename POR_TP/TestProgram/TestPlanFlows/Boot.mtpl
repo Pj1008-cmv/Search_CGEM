@@ -1,0 +1,72 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+TestPlan TestPlanFlows;
+
+
+Flow INIT 
+{
+        FlowItem Initialization PowerOffStage::PowerOffPlatform
+    {
+        Result -2 { Property PassFail = "Fail"; Return -2; } # always for for HW failure
+		Result -1 { Property PassFail = "Fail"; Return -1; } # always for SW failure
+		Result  0 { Property PassFail = "Fail"; Return 0; } # generic failure 
+		Result  1 { Property PassFail = "Pass"; Return 1 ;} 
+    }
+}
+
+
+
+Flow UNIT_END_FLOW 
+{
+        FlowItem UnitEnd UnitEnd::UnitEnd
+    {
+        Result -2 { Property PassFail = "Fail"; Return -2; } # always for for HW failure
+		Result -1 { Property PassFail = "Fail"; Return -1; } # always for SW failure
+		Result  0 { Property PassFail = "Fail"; Return 0; } # generic failure 
+		Result  1 { Property PassFail = "Pass"; Return 1 ;} 
+    }
+}
+
+Flow Boot
+{
+        FlowItem INIT INIT
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0;}
+		Result 1 { Property PassFail = "Pass"; GoTo BootStageTransition ;}
+	}
+
+	FlowItem BootStageTransition BootStageTransition:: BootStageTransition
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0;}
+		Result 1 { Property PassFail = "Pass"; GoTo BootToEFI; }
+	}
+	FlowItem BootToEFI EFI :: EFI
+	{
+        Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0;}
+		Result 1 { Property PassFail = "Pass"; GoTo UNIT_END_FLOW; }
+	}
+	FlowItem UNIT_END_FLOW UNIT_END_FLOW
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0 ;}
+		Result 1 { Property PassFail = "Pass"; Return 1 ; }
+	}
+}
+
+FlowDefs
+{
+    #InitFlow = INIT;
+    #LotStartFlow = LOT_START_FLOW;
+    #UnitStartFlow = UNIT_START_FLOW;
+    BootFlow = Boot;
+    UnitEndFlow = UNIT_END_FLOW;
+    #LotEndFlow = LOT_END_FLOW;
+}

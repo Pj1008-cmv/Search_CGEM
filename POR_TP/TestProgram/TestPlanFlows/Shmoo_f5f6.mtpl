@@ -1,0 +1,133 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+TestPlan Shmoo_f5f6;
+
+## -------------------------------------------------------------------------##
+##				                  Test Methods								##
+## -------------------------------------------------------------------------##
+
+Test DecisionNode NoOperation
+{
+	DefaultDecisionExitPort = 1 ;
+	Timeout = "0:00:30";
+}
+
+##								   Flow Defs						        ##
+## -------------------------------------------------------------------------##
+FlowDefs
+{
+    Shmoo_f5f6 = Shmoo_f5f6;
+}
+
+Flow INIT 
+{
+        FlowItem Initialization PowerOffStage::PowerOffPlatform
+    {
+        Result -2 { Property PassFail = "Fail"; Return -2; } # always for for HW failure
+		Result -1 { Property PassFail = "Fail"; Return -1; } # always for SW failure
+		Result  0 { Property PassFail = "Fail"; Return 0; } # generic failure 
+		Result  1 { Property PassFail = "Pass"; Return 1 ;} 
+    }
+}
+
+
+##								   Flows								    ##
+## -------------------------------------------------------------------------##
+
+Flow Shmoo_f5f6
+{   
+	FlowItem INIT INIT
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 { Property PassFail = "Pass"; GoTo PreFlightFlow;}
+	}
+	FlowItem PreFlightFlow PreFlightFlow::PreFlightFlow
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0  { Property PassFail = "Fail"; Return  0; }
+		Result 1  { Property PassFail = "Pass"; GoTo PrepareSetupForSSF; }
+	}
+	FlowItem PrepareSetupForSSF NoOperation
+	{
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0  { Property PassFail = "Fail"; Return  0; }
+		Result 1  { 
+			Property PassFail = "Pass"; 
+			
+			## Setting up content configuration for SSF run
+			 Set ContentExecutionSetupVars.Timeout = IAContentSetup.Timeout;
+			 Set ContentExecutionSetupVars.BootStage = IAContentSetup.BootStage;
+			 Set ContentExecutionSetupVars.MaxNumberOfTestRuns = IAContentSetup.MaxNumberOfTestRuns;
+			 Set ContentExecutionSetupVars.RequiredNumberOfPasses = IAContentSetup.RequiredNumberOfPasses;
+			 Set ContentExecutionSetupVars.MaxAllowedFailures = IAContentSetup.MaxAllowedFailures;
+			 Set ContentExecutionSetupVars.MaxAllowedConsecutiveFailures = IAContentSetup.MaxAllowedConsecutiveFailures;
+			 Set PostActionsSetupVars.PostFail = IAContentSetup.PostFail;
+			 Set PostActionsSetupVars.PostPass = IAContentSetup.PostPass;
+			 Set ContentExecutionSetupVars.VvarRegex = IAContentSetup.VvarRegex;
+
+			# Setting up Shmoo mode configuration for SSF run
+			Set ShmooExperimentSetup.ShmooExperimentName = "Shmoo_f5f6";
+			Set ShmooExperimentSetup.ShmooExperimentName = IASSFSetup.ShmooDomainName;
+			#Set SearchParam.ShmooLimiterDestination = IASSFSetup.ShmooLimiterDestination;
+
+			# by default,IsPostScrubEnabled was set to False
+			Set ShmooParam.IsPostScrubEnabled = False;
+
+			##	TO ENABLE FULL CONTENT EXECUTION	##
+			Set EnableContents.SweetSpotFinder = True;
+			Set EnableContents.SearchAndPostScrub = True;
+			
+			Set FrequencyVars.AxisName = IASSFSetup.FrequencyAxisName;
+			Set FrequencyVars.ListOfValues = IAf5f6Setup.ShmooFreqValues;
+
+			Set RingVars.AxisName = IASSFSetup.RingAxisName;
+			#Set RingVars.ListOfValues = IASSFSetup.RingValues;
+
+			Set TemperatureVars.AxisName = IASSFSetup.TemperatureAxisName;
+			Set TemperatureVars.ListOfValues = IAf5f6Setup.TemperatureValues;
+
+			Set VoltageVars.AxisName = IASSFSetup.VoltageAxisName;
+
+			# Setting up VF Cruve
+			Set VfCurveSetupVars.VoltageName = IASSFSetup.VFCurveVoltageName;
+			Set VfCurveSetupVars.FrequencyName = IASSFSetup.VFCurveFrequencyName;
+
+			# Setting up Shmoo CGEM Axes
+			Set ShmooAxesSetupVars.IACoreShmooAxes = IASSFSetup.IAShmooAxes;
+
+			GoTo Shmoo_f5f6_IACore; 
+		}
+	}
+
+	FlowItem Shmoo_f5f6_IACore ShmooCGEM::Shmoo
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0  { Property PassFail = "Fail"; Return  0; }
+
+
+		## Shmoo completed (with limiter/s) proceed to Search experiment
+		Result 1  { Property PassFail = "Pass"; Return 1; }
+		
+		## Shmoo completed (without limiter/s) stop experiment (not continue). PDE willl make adjustment on the Shmoo setup	
+		Result 2 {
+			Property PassFail = "Pass";
+
+			## evaluate if there is no limiter (All point pass / all point fail will resulted in no limiter)
+			SmartExitPort => SearchParam.SweetSpotLimiters == null;
+			Return 2;
+		}
+	}
+
+}
+
+
+
+
+
+
+

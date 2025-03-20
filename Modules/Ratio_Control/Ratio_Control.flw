@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--File is auto-generated, any manual edits can be overwritten.-->
+<!DOCTYPE HDMTFlowItemCoor []>
+<HDMTFlowItemCoor>
+  <FlowItem name="Ratio_Control::set_core_ratio.Set_Core_Frequency" X="90" Y="87" />
+  <FlowItem name="Ratio_Control::set_acode_core_ratio.Set_Core_Acode_ratio" X="25" Y="25" />
+  <FlowItem name="Ratio_Control::set_ring_ratio.Set_Ring_Frequency" X="25" Y="25" />
+  <FlowItem name="Ratio_Control::read_ratios.Read_Core_Ratio" X="25" Y="25" />
+  <FlowItem name="Ratio_Control::read_ratios.Read_Ring_Ratio" X="25" Y="25" />
+  <FlowItem name="Ratio_Control::set_ring_ratio.Ring_Ratio_Selector" X="25" Y="25" />
+</HDMTFlowItemCoor>

@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--File is auto-generated, any manual edits can be overwritten.-->
+<!DOCTYPE HDMTFlowItemCoor []>
+<HDMTFlowItemCoor>
+  <FlowItem name="Shmoo_f5f6::Shmoo_f5f6.Shmoo_f5f6_IACore" X="55" Y="85" />
+  <FlowItem name="Shmoo_f5f6::Shmoo_f5f6.PrepareSetupForSSF" X="45" Y="65" />
+  <FlowItem name="Shmoo_f5f6::Shmoo_f5f6.PreFlightFlow" X="35" Y="45" />
+  <FlowItem name="Shmoo_f5f6::Shmoo_f5f6.INIT" X="25" Y="25" />
+  <FlowItem name="Shmoo_f5f6::INIT.Initialization" X="25" Y="25" />
+</HDMTFlowItemCoor>

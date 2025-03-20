@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--File is auto-generated, any manual edits can be overwritten.-->
+<!DOCTYPE HDMTFlowItemCoor []>
+<HDMTFlowItemCoor>
+  <FlowItem name="Search_f1f2::INIT.Initialization" X="25" Y="25" />
+  <FlowItem name="Search_f1f2::Search_f1f2.INIT" X="25" Y="25" />
+  <FlowItem name="Search_f1f2::Search_f1f2.PreFlightFlow" X="35" Y="45" />
+  <FlowItem name="Search_f1f2::Search_f1f2.PrepareSetupForSSF" X="45" Y="65" />
+  <FlowItem name="Search_f1f2::Search_f1f2.RunSSF_ShmooIACore" X="55" Y="85" />
+  <FlowItem name="Search_f1f2::Search_f1f2.PrepareSetupForSearch" X="65" Y="105" />
+  <FlowItem name="Search_f1f2::Search_f1f2.RunSearch_IACore" X="75" Y="125" />
+  <FlowItem name="Search_f1f2::Search_f1f2.PreparePostScrub" X="85" Y="145" />
+  <FlowItem name="Search_f1f2::Search_f1f2.RunPostScrub" X="95" Y="165" />
+  <FlowItem name="Search_f1f2::Search_f1f2.ResetUserVar" X="105" Y="185" />
+</HDMTFlowItemCoor>

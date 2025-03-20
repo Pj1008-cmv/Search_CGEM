@@ -1,0 +1,168 @@
+Version 1.0;
+
+ProgramStyle = Modular;
+
+TestPlan SearchCGEM;
+
+#TODO add Import statements
+
+#TODO add Tests definitions
+
+Test DelayTest NoOp 
+{
+  Delay = "00:00:00";
+  Timeout = "00:00:01";
+}
+
+Test MarionetteExecuteContent Search_ExecuteDragonTest_CGEM
+{
+	Timeout = ContentExecutionSetupVars.Timeout;
+	ContentGroup = ContentExecutionSetupVars.ContentGroupName; 
+    BootStage = ContentExecutionSetupVars.BootStage;
+	Transport = MarionetteSerialTransport { ComPort = SerialPortSetupVars.ComPortNumber; };
+    EnablePostFailActions = True;
+    EnablePostPassActions = True;
+    ContentGroupExecutionMode = SearchMode
+	{
+		MaxNumberOfTestRuns = ContentExecutionSetupVars.MaxNumberOfTestRuns;
+		RequiredNumberOfPasses = ContentExecutionSetupVars.RequiredNumberOfPasses;
+		MaxAllowedFailures = ContentExecutionSetupVars.MaxAllowedFailures;
+		MaxAllowedConsecutiveFailures = ContentExecutionSetupVars.MaxAllowedConsecutiveFailures;
+		ExperimentName = SearchExperimentSetup.SearchExperimentName;
+		Domain =  SearchExperimentSetup.SearchDomainName;
+		SearchForMin = SearchParam.SearchForMin;
+		NumberOfLimiters = SearchParam.NumberOfLimiters;
+		SaveSearchLimitersTo = nameof(SearchParam.SearchLimiters);
+		SearchSSFLimiters = {
+			IsEnabled = SearchParam.IsSearchSSFEnabled;
+			InputLimiters = SearchParam.SweetSpotLimiters;
+		};
+		SearchAxes =  SearchAxesSetupVars.IACoreSearchAxes; ##defined in search cgem.usvr
+	};  
+}
+
+Flow SearchCGEM 
+{
+	FlowItem RunSearch Search_ExecuteDragonTest_CGEM
+	{
+		Result -2 { 
+			Property PassFail = "Fail"; Return -2; 
+		}
+		Result -1 { 
+			Property PassFail = "Fail"; Return -1; 
+		}
+		Result 0 { 
+			Property PassFail = "Fail"; Return 0; 
+		} 
+		Result 1 { 
+			Property PassFail = "Pass"; Return 1;
+		}
+		Result 2 {
+			Property PassFail = "Fail";
+			Set ContentUsrv.LastContentResult = toString($Result.LastContentResult.Status); 
+			Set ContentUsrv.Status = toString($Result.LastContentResult.FailureType); 
+			Set ContentName.LastContentNameExecuted = $Result.LastContentResult.Name; 
+			Call PostPassFailActionsFlow;
+		}
+		Result 3 {
+			Property PassFail = "Pass";
+			Set ContentUsrv.LastContentResult = toString($Result.LastContentResult.Status); 
+			Set ContentUsrv.Status = toString($Result.LastContentResult.FailureType); 
+			Set ContentName.LastContentNameExecuted = $Result.LastContentResult.Name; 
+			Call PostPassFailActionsFlow;
+		}
+        Result  21 { 
+			Property PassFail = "Pass"; 
+			Call SetupFrequency;
+		}  
+		Result  23 { 
+			Property PassFail = "Pass"; 
+			Call SetupTemperature;
+		}   
+		Result 25 { 
+			Property PassFail = "Pass"; 
+			Call SetupVoltage;
+		}  
+	}
+	FlowItem SetupFrequency SetupFrequency
+	{
+	    Result -2 { Property PassFail = "Fail"; Set FrequencyVars.AxisPointSetup = False; Back -2; }
+		Result -1 { Property PassFail = "Fail"; Set FrequencyVars.AxisPointSetup = False; Back -1; }
+		Result 0 { Property PassFail = "Fail"; Set FrequencyVars.AxisPointSetup = False; Back 0; }
+		Result 1 { Property PassFail = "Pass"; Set FrequencyVars.AxisPointSetup = True; Back 1; }
+	}
+	FlowItem SetupTemperature Intec::Intec
+	{
+		Result -2 { Property PassFail = "Fail"; Set TemperatureVars.AxisPointSetup = False; Back -2; }
+		Result -1 { Property PassFail = "Fail"; Set TemperatureVars.AxisPointSetup = False; Back -1; }
+		Result 0 { Property PassFail = "Fail"; Set TemperatureVars.AxisPointSetup = False; Back 0; }
+		Result 1 { Property PassFail = "Pass"; Set TemperatureVars.AxisPointSetup = True; Back 1; }
+	}
+	FlowItem SetupVoltage CoreVoltage::CoreVoltage 
+	{
+		Result -2 { Property PassFail = "Fail"; Set VoltageVars.AxisPointSetup = False; Back -2; }
+		Result -1 { Property PassFail = "Fail"; Set VoltageVars.AxisPointSetup = False; Back -1; }
+		Result 0 { Property PassFail = "Fail"; Set VoltageVars.AxisPointSetup = False; Back 0; }
+		Result 1 { Property PassFail = "Pass"; Set VoltageVars.AxisPointSetup = True; Set DecisionNode.RebootAndReapplySetup = False; Back 1; }
+	}
+	FlowItem PostPassFailActionsFlow FailureRecovery::PostPassFailActionsFlow
+	{
+		Result -2 { Property PassFail = "Fail"; Back -2; }
+		Result -1 { Property PassFail = "Fail"; Back -1; }
+		Result 0 { Property PassFail = "Fail"; Back 0; }
+		Result 1 { Property PassFail = "Pass"; Back 1; }
+	}
+}
+
+Flow SetupFrequency
+{
+	FlowItem SetupFlow PowerOffStage::PowerOffPlatform
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0;}
+		Result 1 { Property PassFail = "Pass"; GoTo BootHalt; }
+	}
+	FlowItem BootHalt BootStageTransition::BootStageTransition
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0;}
+		Result 1 { Property PassFail = "Pass"; GoTo SetupCoreFrequency;}
+	}
+	FlowItem SetupCoreFrequency Ratio_Control :: set_core_ratio
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0;}
+		Result 1 { Property PassFail = "Pass"; GoTo SetupRing;}
+	}
+	FlowItem SetupRing Ratio_Control::set_ring_ratio
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0;}
+		Result 1 { Property PassFail = "Pass"; GoTo EFI;}
+	}
+	FlowItem EFI EFI ::EFI
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail"; Return 0; }
+		Result 1 { Property PassFail = "Pass"; GoTo SetupAcodeRatio; }
+	}
+	FlowItem SetupAcodeRatio Ratio_Control :: set_acode_core_ratio
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail";  Return 0; }
+		Result 1 { Property PassFail = "Pass";  GoTo ReadRatios; }
+	}
+	FlowItem ReadRatios Ratio_Control::read_ratios
+	{
+		Result -2 { Property PassFail = "Fail"; Return -2; }
+		Result -1 { Property PassFail = "Fail"; Return -1; }
+		Result 0 { Property PassFail = "Fail";  Return 0; }
+		Result 1 { Property PassFail = "Pass";  Return 1; }
+	}
+}

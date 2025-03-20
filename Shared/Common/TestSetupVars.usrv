@@ -1,0 +1,248 @@
+Version 1.0;
+
+
+UserVars TPLSVars
+{
+    Boolean MainFlowTimedOut = False;
+}
+
+##	                   Domain Selector                  ##
+## ---------------------------------------------------- ##
+
+SelectorRuleCollection DomainActionSelectors
+{
+    SelectorRule DomainAction(Core, Atom, Ring, GT, svos, rhel, DEFAULT)
+    {
+        Core => CurrentDomainTrack.currentDomain == "Core";
+        Atom => CurrentDomainTrack.currentDomain == "Atom";
+        GT => CurrentDomainTrack.currentDomain == "GT";
+        Ring => CurrentDomainTrack.currentDomain == "Ring";
+        svos => CurrentDomainTrack.currentDomain == "svos";
+        rhel => CurrentDomainTrack.currentDomain == "rhel";
+        DEFAULT;
+    }
+    SelectorRule ShouldPerformDomainAction(YES, NO)
+    {
+        YES => CurrentDomainTrack.currentDomain == "Core" || CurrentDomainTrack.currentDomain == "Atom" || CurrentDomainTrack.currentDomain == "Ring" || CurrentDomainTrack.currentDomain == "nac" || CurrentDomainTrack.currentDomain == "svos" || CurrentDomainTrack.currentDomain == "rhel";
+        NO;
+    }
+}
+
+
+
+SelectorRuleCollection EnvironmentalConditionsSelector
+{
+    SelectorRule ShouldApplyEC_WIN (NO, YES)
+    {
+        NO => CurrentOsTrack.currentOs == "Windows";
+        YES ;
+    }
+}
+
+##	              Predefined Flow Timeouts              ##
+## ---------------------------------------------------- ##
+UserVars PredefinedFlowTimeouts
+{
+    String InitFlow = "00:00:10";
+    String LotStart     = "00:10:00";
+    String UnitStart   = "00:00:10";
+    String UnitEnd     = "00:00:10";
+    String LotEnd      = "00:10:10";
+    String Search_OG = "24:00:00";
+    String DefaultTimeout = "48:00:00";
+    String BootFlow = "00:30:00";
+
+    String Search_f1f2 = "24:00:00";
+    String Search_f3f4 = "24:00:00";
+    String Search_f5f6 = "24:00:00";
+    String Shmoo_f5f6 =  "24:00:00";
+    String Searchf1f4 = "48:00:00";
+    #String IACore_SearchFlow = "24:00:00";
+    #String IACore_Search_512_800 = "12:00:00";
+    #String PCIe_Shmoo_Test_Flow = "24:00:00";
+    #String CDF_Shmoo_Test_Flow = "24:00:00";
+    #String Nac_Shmoo_NA_Default = "24:00:00"; 
+    #String IACore_Shmoo_4D = "24:00:00";
+    #String Full_Search_IACore_Domain = "24:00:00";
+
+}
+
+###############################################################################################
+
+UserVars ExperimentSetup
+{
+	String Shmoo = "Shmoo";
+    String SSF = "SweetSpotFinder";
+    String Search = "SearchFlow";
+    String PostScrub = "PostScrubVoltage";
+    String Domain = "IACore";
+    String Test_Program_Env="Aguila";
+    #String VisualID = "M2E48N8400179";
+    
+    # Possible values 
+        # FUSE       Set Voltage at Boot halt using fuse override
+        # FIVR		 Set Voltage at EFI using fivr
+        # NA         No  Voltage Set for the experiment
+        # KS         Kick Start Voltage Setting. Apply fuse voltage one time and Parallel setting all points as long as all contents are passed
+        # Hybrid     Hybrid parallel setting voltage
+        # BOTH       Set Voltage at boot halt and also apply at EFI using FIVR registers
+	String DisableITD = "FUSE"; 
+    Boolean CoreDCFDisabled = true;
+    Boolean NeedApplyHybrid=false;
+
+    # Possible values 
+        # FUSE                         Set Voltage at Boot halt using fuse override
+        # FIVR		                   Set Voltage at EFI using fivr
+        # NA                           No  Voltage Set for the experiment
+        # KS (vparallel_pcode)         Kick Start Voltage Setting. Apply fuse voltage one time and Parallel setting all points as long as all contents are passed
+        # Hybrid     Hybrid parallel setting voltage
+        # BOTH       Set Voltage at boot halt and also apply at EFI using FIVR registers
+	String VoltageSetOptions = "CORE0";
+    
+    # Possible values 
+        # Core_Ratio            Set CoreRatio at Boot halt using fuse override
+        # Core_Ratio_Global		Set CoreRatio at EFI using fivr
+        # NA (Not Enabled)      No  CoreRatio Set for the experiment
+        # BOTH (Not Enabled)    Set CoreRatio at boot halt and also apply at EFI using pcode registers
+	String CoreRatioSetOptions = "Core_Ratio_Global";
+    
+    ############   Original_Item from GNR ############
+    
+    # Possible values 
+    #   # FUSE       Set CoreRatio at Boot halt using fuse override
+    #    # PEGA		 Set CoreRatio at EFI using fivr
+    #    # NA         No  CoreRatio Set for the experiment
+    #    # BOTH       Set CoreRatio at boot halt and also apply at EFI using pcode registers
+	#String CoreRatioSetOptions = "FUSE";
+    
+    
+##	                   AVX Modes                        ##
+## ---------------------------------------------------- ##
+    String AVX_128="128";
+    String AVX_256="256";
+    String AVX_512="512";
+    Integer AvxCount = 0;
+    Array<String> PossibleAvxModes = [AVX_128, AVX_256, AVX_512];
+
+    
+##	                   Core Voltages                    ##
+## ---------------------------------------------------- ##
+    # Possible Voltage max for CORE RATIO
+    Double CoreVoltageMax8 = 0.64;
+    Double CoreVoltageMax16 = 0.71;
+    Double CoreVoltageMax20 = 0.76;
+    Double CoreVoltageMax30 = 0.82;
+    Double CoreVoltageMax40 = 0.92;
+    Double CoreVoltageMax48 = 1.07;
+    Integer CoreVoltageCount = 0;
+    Array <Double> CoreRatioMaxVoltageRange = [CoreVoltageMax8, CoreVoltageMax16, CoreVoltageMax20, CoreVoltageMax30, CoreVoltageMax40, CoreVoltageMax48];
+    
+##	                   Temperature                      ##
+## ---------------------------------------------------- ##
+    #Set Temperature
+    Integer TemperatureToSet = 75;
+    Integer CurrentExitPort = 0;
+    Integer BootTemperature = 65;
+    Integer SafeTemperature = 25;
+
+    #String PossibleTemperature1 = CoreTemperatureSelector.SetTemperatureSelectorRule("75","75","75","75","75","80");
+    String CoreRatio8Temp = "85";
+    String CoreRatio16Temp= "85";
+    String CoreRatio20Temp = "85";
+    String CoreRatio30Temp = "85";
+    String CoreRatio40Temp = "75";
+    String CoreRatio48Temp = "75";
+    #Array<String> TemperatureRange1 =[PossibleTemperature1];
+    Integer TempLineCount = 0;
+    
+##	                   Core Ratio                       ##
+## ---------------------------------------------------- ##
+    # Core Ratio possible
+    String CoreRatio1 = "8";
+    String CoreRatio2 = "16";
+    String CoreRatio3 = "20";
+    String CoreRatio4 = "30";
+    String CoreRatio5 = "40";
+    String CoreRatio6 = "48";
+    String SetFinalCoreRatio = "20";
+    #String CoreRatioGlobal8 = "8"
+    Array<String> CoreRatioGlobalRange = [CoreRatio1, CoreRatio2];
+    String CoreRatioFinalValue = SetFinalCoreRatio;
+    Boolean IsIterationComplete = false;
+    Integer LineCount = 0;
+
+##	                   CLM Ratio                        ##
+## ---------------------------------------------------- ##
+    # CLM Ratio possibles
+    String CLMRatio1 = "8";
+    String CLMRatio2 = "16";
+    String CLMRatio3 = "21";
+    Array<String> ClmRatioRange = [CLMRatio1, CLMRatio2, CLMRatio3];
+    
+    # Possible Voltage max for CORE RATIO
+    Double ClmVoltageMax8 = 0.65;
+    Double ClmVoltageMax16 = 0.72;
+    Double ClmVoltageMax21 = 0.76;
+    Array <Double> ClmRatioMaxVoltageRange = [ClmVoltageMax8, ClmVoltageMax16, ClmVoltageMax21];
+    
+}
+
+#SelectorRuleCollection CoreTemperatureSelector
+#{
+#    SelectorRule SetTemperatureSelectorRule(CoreTemperatureRatio8,CoreTemperatureRatio16, CoreTemperatureRatio20,CoreTemperatureRatio24,CoreTemperatureRatio30,CoreTemperatureRatio35, Default)
+#    {
+#        CoreTemperatureRatio8 => CoreRatioGlobalEfiUsrvr.CurrentValue == "8";
+#		CoreTemperatureRatio16 => CoreRatioGlobalEfiUsrvr.CurrentValue == "16";
+#		CoreTemperatureRatio20 => CoreRatioGlobalEfiUsrvr.CurrentValue == "20";
+#		CoreTemperatureRatio24 => CoreRatioGlobalEfiUsrvr.CurrentValue == "24";
+#		CoreTemperatureRatio30 => CoreRatioGlobalEfiUsrvr.CurrentValue == "30";
+#		CoreTemperatureRatio35 => CoreRatioGlobalEfiUsrvr.CurrentValue == "35";
+#        Default;
+#    }
+#}
+UserVars PlatformVars
+{
+	Integer BootCount = 0;
+	Integer MaxBootRetries = 2;
+
+    Integer PythonRecoveryCount = 0;
+    Integer MaxPythonRecoveryRetries = 2;
+    Integer TemperatureVerifMaxyWaitInSeconds = 300; # This would cause verify to wait up to 5 minutes before calling a verification failure.
+}
+
+#SelectorRuleCollection IsIterationComplete
+#{
+#    SelectorRule CoreRatioIterationRule(IterationCompleted, Default)
+#    {
+#        IterationCompleted => VoltageVars.AxisPointSetup == True;
+#        #IterationCompleted => CoreRatioGlobalEfiUsrvr.CurrentValue == ExperimentSetup.CoreRatioFinalValue;
+#        Default;
+#    }
+#}
+
+UserVars ProfilingUserVars {
+	Boolean perform_stop_profiling = false;
+}
+
+UserVars ContentName
+{
+    String LastContentNameExecuted = "";
+}
+
+UserVars SettingFailure
+{
+	Integer FailureCounter = 0;
+}
+
+UserVars DecisionNodes
+{
+	Boolean RebootRequired = False;
+	Boolean RunMCE = False;
+    Boolean ContentFailureRecovery  = False;
+}
+
+UserVars ContentUsrv
+{
+    String LastContentResult = "Fail";
+    String Status = "Failed";
+}

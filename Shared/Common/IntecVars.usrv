@@ -1,0 +1,125 @@
+Version 1.0;
+
+
+# Array of Available Sensors for TCU, PECI and TDAU
+UserVars SensorCollections
+{
+  
+   String TCU = "['TCU0', 'TCU1', 'TCU2', 'TCU3']";
+   String Diode = "['Diode1', 'Diode2', 'Diode3', 'Diode4']";
+   String PECI = "['PECI1', 'PECI2', 'PECI3', 'PECI4', 'PECI5', 'PECI6', 'PECI7', 'PECI8', 'PECI9', 'PECI10', 'PECI11', 'PECI12', 'PECI13', 'PECI14', 'PECI14', 'PECI15', 'PECI16']";
+}
+
+
+# Values of PID Constant.
+UserVars PIDConstantValues
+{
+    Integer Proportional = 15000; #2200;
+    Integer Integral = 6000; #400;
+    Integer Derivative = 0;
+}
+
+UserVars TECNumber
+{
+    String TEC1 = "TEC1";
+    String TEC2 = "TEC2";
+    String TEC3 = "TEC3";
+    String TEC4 = "TEC4";
+    String TECAll = "TECAll";
+}
+
+UserVars Algorithm
+{
+    String Average = "Avg";
+    String Maximum = "Max";
+    String Minimum = "Min";
+}
+
+UserVars GangMode 
+{
+    String Enable = "False";
+}
+
+# Path to the Intec Configuration File
+UserVars IntecConfigFile
+{
+    String PeciConfigFile = "C:\\SVSHARE\\cmv_client_automation_mtl\\configs\\MTLP682_DieID0_peci_config.xml";
+    String  TdauConfigFile = "C:\\SVSHARE\\cmv_client_automation_mtl\\configs\\TDAU_input_MTL-PS_682_InTEC_HOT.xml";
+    String  SafetyEventsConfigFile = "C:\\SVSHARE\\cmv_client_automation_mtl\\configs\\Intec_SafetyEvents_Config_Cobalt.xml";
+}
+
+UserVars EXP1Config
+{   
+    String IntecSensorEnablePowerOff = SensorCollections.TCU;
+    String IntecSensorEnable = SensorCollections.PECI;
+    String IntecFeedbackSensorPowerOff = "TCU0";
+    String IntecFeedbackSensor = "PECI7";
+    
+    #Integer SetPointTemperature = 70;
+    Integer SetPointTemperature = toInteger(TemperatureVars.AxisCurrentValue);  
+    Integer SafePointTemperature = 30;
+}
+
+UserVars VTTenableCheck {
+    Boolean perform_VTT_Enabling = true;
+}
+
+
+
+################################################################################################################################################################################################
+## All the command below is hardcoded manually for now then will be replaced with uservars one by one
+
+UserVars IntecPythonCommandCollection
+{
+    # Load Intec Configuration File (PECI, TDAU and Safety Events Files)
+    #String LoadConfiguration = "Intec_POC_Wrapper.LoadConfiguration('" + IntecConfigFile.PeciConfigFile + "','" + IntecConfigFile.TdauConfigFile + "','" + IntecConfigFile.SafetyEventsConfigFile + "')";
+    String LoadConfiguration = "Intec_POC_Wrapper.LoadIntecConfig()";
+    
+    # Enable Sensors TCU0
+    #String EnableSensors_AtPowerOff = "Intec_POC.EnableSensors(['TCU0', 'TCU1', 'TCU2', 'TCU3'],'" + TECNumber.TECAll + "')";
+    String EnableSensors_AtPowerOff = "Intec_POC.EnableSensors(" + EXP1Config.IntecSensorEnablePowerOff + ",'" + TECNumber.TECAll + "')";
+
+    # Enable Sensors PECI7
+    #String EnableSensors_AtBootTransition = "Intec_POC.EnableSensors(['PECI7'],'" + TECNumber.TECAll + "')";
+    String EnableSensors_AtBootTransition = "Intec_POC.EnableSensors(" + EXP1Config.IntecSensorEnable + ",'" + TECNumber.TECAll + "')";
+
+    # IntecEnableOnBoardVtt
+    String  IntecEnableOnBoardVtt = "Intec_POC.IntecEnableOnBoardVtt()";
+
+    # Reset All Safety Events
+    String ResetAllSafetyEvents = "Intec_POC.ResetAllSafetyEvents()";
+
+    # Get Enabled Sensors from TEC
+    String GetEnabledSensors = "Intec_POC.GetEnabledSensors('" + TECNumber.TECAll + "')";
+
+    # Get Sensor Temperature From TEC
+    String GetSensorTemperature = "Intec_POC.GetSensorTemperature('TCU0','" + TECNumber.TECAll + "')";
+    
+    # Get SetPoint Temperature from TEC 
+    String GetSetPointTemperature = "Intec_POC.GetSetPointTemperature('" + TECNumber.TECAll + "')";
+
+    # Get Feedback Temperature
+    String GetFeedbackTemperature = "Intec_POC.GetFeedbackTemperature('" + TECNumber.TECAll + "')";
+
+
+    # Set Closed Loop At Power Off with FB sensor  set to TC, Set Temperature to 30 
+    #String SetClosedLoopControl_AtPoweOff=  "Intec_POC.SetClosedLoopControl('Avg', ['TCU0'], 30.0,'" + TECNumber.TECAll + "', False)";
+    #String SetClosedLoopControl_AtBootTransition = "Intec_POC.SetClosedLoopControl('Max', ['PECI7'], 60.0,'" + TECNumber.TECAll + "', False)";
+
+    String SetClosedLoopControl_AtPoweOff=  "Intec_POC.SetClosedLoopControl('" + Algorithm.Maximum + "','" +  EXP1Config.IntecFeedbackSensorPowerOff + "'," + toString(EXP1Config.SafePointTemperature) + ",'" + TECNumber.TECAll + "'," + GangMode.Enable + ")";
+
+    #String SetClosedLoopControl_AtBootTransition = "Intec_POC.SetClosedLoopControl('Max', ['PECI7'], 60.0,'" + TECNumber.TECAll + "', False)";
+    String SetClosedLoopControl_AtBootTransition =  "Intec_POC.SetClosedLoopControl('" + Algorithm.Maximum + "','" +  EXP1Config.IntecFeedbackSensor + "'," + toString(EXP1Config.SetPointTemperature) + ",'" + TECNumber.TECAll + "'," + GangMode.Enable + ")";
+
+
+    #String StopRampRateControl = "Intec_POC.StopRampRateControl(" + TECNumber.TECAll + ")";
+    #String SetTECVmax = "Intec_POC.SetTECVmax(" + toString(GenericCollections.TECVmax) + "," + TECNumber.TECAll + ")";
+    #String SetTCURTDSensor = "Intec_POC.SetTCURTDSensor(" + RTDSensor.RTDSensorType + "," + TECNumber.TECAll + ")";
+    #String SetFallbackSensor = "Intec_POC.SetFallbackSensor(" + FallBackSensorsConfig.algorithm + "," + toString(SensorsCollections.Diode) + "," + toString(FallBackSensorsConfig.CaseWithOffsetTimeout) + "," + toString(FallBackSensorsConfig.ManualOffset) + "," + TECNumber.TECAll + ")";
+    #String SetOpenLoopControl = "Intec_POC.SetOpenLoopControl(" + toString(OpenLoopConfig.OpenLoopVoltage) + "," + OpenLoopConfig.HeatOrCool + "," + TECNumber.TECAll + ")";
+    #String SetClosedLoopControl = "Intec_POC.SetClosedLoopControl(" + ClosedLoopConfig.Algorithm + "," + toString(SensorsCollections.InputSensor) + "," + toString(ClosedLoopConfig.PIDValues) + "," + toString(ClosedLoopConfig.ParamValues) + "," + toString(ClosedLoopConfig.SetpointTemperature) + "," + toString(ClosedLoopConfig.GangMode) + ")";
+
+    
+    #String SetClosedLoopControl = "Intec_POC.SetClosedLoopControl('Max'," + toString(Test.Sensor[0]) + "," + toString(IntecSensors.SetPointTemperature) + ",'" + TECNumber.TECAll + "', False)";
+}
+################################################################################################################################################################################################

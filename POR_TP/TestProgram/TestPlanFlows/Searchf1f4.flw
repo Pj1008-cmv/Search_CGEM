@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--File is auto-generated, any manual edits can be overwritten.-->
+<!DOCTYPE HDMTFlowItemCoor []>
+<HDMTFlowItemCoor>
+  <FlowItem name="Searchf1f4::INIT.Initialization" X="25" Y="25" />
+  <FlowItem name="Searchf1f4::Searchf1f4.INIT" X="25" Y="25" />
+  <FlowItem name="Searchf1f4::Searchf1f4.PreFlightFlow" X="35" Y="45" />
+  <FlowItem name="Searchf1f4::Searchf1f4.PrepareSetupForSSF" X="45" Y="65" />
+  <FlowItem name="Searchf1f4::Searchf1f4.RunSSF_ShmooIACore" X="55" Y="85" />
+  <FlowItem name="Searchf1f4::Searchf1f4.PrepareSetupForSearch" X="65" Y="105" />
+  <FlowItem name="Searchf1f4::Searchf1f4.RunSearch_IACore_f1f2" X="75" Y="125" />
+  <FlowItem name="Searchf1f4::Searchf1f4.PreparePostScrub" X="85" Y="145" />
+  <FlowItem name="Searchf1f4::Searchf1f4.RunPostScrub" X="95" Y="165" />
+  <FlowItem name="Searchf1f4::Searchf1f4.ResetUserVar" X="105" Y="185" />
+  <FlowItem name="Searchf1f4::Searchf1f4.INIT2" X="115" Y="205" />
+  <FlowItem name="Searchf1f4::Searchf1f4.PreFlightFlow2" X="125" Y="225" />
+  <FlowItem name="Searchf1f4::Searchf1f4.PrepareSetupForSSF2" X="135" Y="245" />
+  <FlowItem name="Searchf1f4::Searchf1f4.RunSSF_ShmooIACore2" X="145" Y="265" />
+  <FlowItem name="Searchf1f4::Searchf1f4.PrepareSetupForSearch2" X="155" Y="285" />
+  <FlowItem name="Searchf1f4::Searchf1f4.PreparePostScrub2" X="175" Y="325" />
+  <FlowItem name="Searchf1f4::Searchf1f4.RunPostScrub2" X="185" Y="345" />
+  <FlowItem name="Searchf1f4::Searchf1f4.RunSearch_IACore_f3f4" X="165" Y="305" />
+</HDMTFlowItemCoor>

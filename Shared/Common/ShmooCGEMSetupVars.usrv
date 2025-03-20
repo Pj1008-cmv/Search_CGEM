@@ -1,0 +1,143 @@
+Version 1.0;
+
+UserVars ShmooExperimentSetup
+{
+	String ShmooExperimentName = "Shmoo";
+	String ShmooDomainName = "IACore";
+
+}
+
+UserVars ShmooParam
+{
+	Boolean IsPostScrubEnabled = False;
+}
+
+UserVars ShmooAxesSetupVars
+{
+	Array<ShmooAxis> IACoreShmooAxes = [
+          ARLSShmooAxes.FrequencyAxis,
+		  ARLSShmooAxes.TemperatureAxis,
+		  ARLSShmooAxes.VoltageAxis
+		];	
+}
+
+UserVars ARLSShmooAxes
+{	
+	ShmooAxis FrequencyAxis = {
+				AxisName = FrequencyVars.AxisName;
+				AxisCoordinates = 
+				[ 
+					{ 
+						IsActive = True;
+						Values = FrequencyVars.ListOfValues;
+						Step = FrequencyVars.Step;
+						StopOn = FrequencyVars.StopOn;
+					}
+					
+				];
+
+				# -- debug -- #
+				AxisSetupFlowExitPort = FrequencyVars.AxisExitPort;
+				AxisValueToSet = nameof(FrequencyVars.AxisCurrentValue);
+				AxisSetupPassed = nameof(FrequencyVars.AxisPointSetup);
+				#AxisSafeRegion=[FrequencyVars.SafeRegionMinValue,FrequencyVars.SafeRegionMaxValue];
+				AxisMaxAllowedStopPoints = FrequencyVars.AxisMaxAllowedStopPoints;	
+				AxisMaxAllowedConsecutiveStopPoints = FrequencyVars.AxisMaxAllowedConsecutiveStopPoints;
+	};
+
+	ShmooAxis TemperatureAxis = {
+			AxisName = TemperatureVars.AxisName;
+			AxisCoordinates = 
+			[ 
+				{ 
+					IsActive = True; 
+					Values = TemperatureVars.ListOfValues;
+					Step = TemperatureVars.Step;
+					StopOn = TemperatureVars.StopOn;
+				}
+			];
+			AxisSetupFlowExitPort = TemperatureVars.AxisExitPort;
+			AxisValueToSet = nameof(TemperatureVars.AxisCurrentValue);
+			AxisSetupPassed = nameof(TemperatureVars.AxisPointSetup);
+			#AxisSafeRegion=[TemperatureVars.SafeRegionMinValue,TemperatureVars.SafeRegionMaxValue];
+			AxisMaxAllowedStopPoints = TemperatureVars.AxisMaxAllowedStopPoints;	
+			AxisMaxAllowedConsecutiveStopPoints = TemperatureVars.AxisMaxAllowedConsecutiveStopPoints;
+	};
+
+	ShmooAxis VoltageAxis = {
+			AxisName = VoltageVars.AxisName;
+			AxisCoordinates = 
+			[ 
+				{ 
+					IsActive = ShmooParam.IsPostScrubEnabled == False  && FrequencyVars.AxisCurrentValue == "15"; 
+					#Values = [IAVoltageSetup.MaxVoltageCR_8,IAVoltageSetup.MinVoltage];
+                    #IsActive = True; 
+					Values = [0.52,0.45]; #initially was 1.2,0.48
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+					IsActive = ShmooParam.IsPostScrubEnabled == False  &&  FrequencyVars.AxisCurrentValue == "20"; 
+					#Values = [IAVoltageSetup.MaxVoltageCR_20, IAVoltageSetup.MinVoltage];
+					Values = [0.60, 0.45];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+					IsActive = ShmooParam.IsPostScrubEnabled == False  &&  FrequencyVars.AxisCurrentValue == "30"; 
+					#Values = [IAVoltageSetup.MaxVoltageCR_24, IAVoltageSetup.MinVoltage];
+					Values = [0.70, 0.60];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+					IsActive = ShmooParam.IsPostScrubEnabled == False  && FrequencyVars.AxisCurrentValue == "40"; 
+					#Values = [IAVoltageSetup.MaxVoltageCR_30,IAVoltageSetup.MinVoltage];
+					Values = [0.95, 0.60];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+					IsActive = ShmooParam.IsPostScrubEnabled == False  && FrequencyVars.AxisCurrentValue == "48"; 
+					#Values = [IAVoltageSetup.MaxVoltageCR_35,IAVoltageSetup.MinVoltage];
+					#Values = [1.02, 0.90];
+					Values = [1.00, 0.90];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+                { 
+					IsActive = ShmooParam.IsPostScrubEnabled == False  && FrequencyVars.AxisCurrentValue == "50";
+					#Values = [IAVoltageSetup.MaxVoltageCR_35,IAVoltageSetup.MinVoltage];
+					#Values = [1.09, 0.90];
+					Values = [1.00, 0.90];
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				},
+				{ 
+                    IsActive = ShmooParam.IsPostScrubEnabled; 
+					#Values = not needed here
+					Offset = [0.03,-0.03]; 
+					Step = VoltageVars.Step;
+					StopOn = VoltageVars.StopOn;
+				}
+			];
+			AxisSetupFlowExitPort = VoltageVars.AxisExitPort;
+			AxisValueToSet = nameof(VoltageVars.AxisCurrentValue);
+			AxisSetupPassed = nameof(VoltageVars.AxisPointSetup);
+			AxisMaxAllowedStopPoints = VoltageVars.AxisMaxAllowedStopPoints;	
+			AxisMaxAllowedConsecutiveStopPoints = VoltageVars.AxisMaxAllowedConsecutiveStopPoints;
+	};	
+}
+
+SelectorRuleCollection RingCollection
+{
+	SelectorRule RingRatio(RingRatio8, RingRatio14, RingRatio20, RingRatio26, RingRatio34, RingRatio36)
+	{
+		RingRatio8 => FrequencyVars.AxisCurrentValue == "15";
+		RingRatio14 => FrequencyVars.AxisCurrentValue == "20";
+		RingRatio20 => FrequencyVars.AxisCurrentValue == "30";	
+		RingRatio26 => FrequencyVars.AxisCurrentValue == "40";
+		RingRatio34 => FrequencyVars.AxisCurrentValue == "48";
+		RingRatio36 => FrequencyVars.AxisCurrentValue == "50"; ##will be passing 34 only
+	}
+}

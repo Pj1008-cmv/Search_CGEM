@@ -1,0 +1,258 @@
+Version 1.0;
+
+BinDefs
+{
+    BinGroup PASS_FAIL_BINS
+    {
+        Bin PASS 1 : "";
+        Bin FAIL 0 : "";
+    }
+    BinGroup BOOT_STAGE_BINS
+    {
+        Bin BOOT_STAGE_70 70 : "", FAIL;
+        Bin EFI_71        71 : "", FAIL;
+        Bin EFI_72        72 : "", FAIL;
+        Bin EFI_73        73 : "", FAIL;
+        Bin EFI_74        74 : "", FAIL;
+        Bin WIN_75        75 : "", FAIL;
+        Bin WIN_76        76 : "", FAIL;
+        Bin WIN_77        77 : "", FAIL;
+        Bin WIN_78        78 : "", FAIL;
+        Bin BOOT_STAGE_79 79 : "", FAIL;
+        Bin BOOT_STAGE_80 80 : "", FAIL;
+        Bin LINUX_81      81 : "", FAIL;
+        Bin LINUX_82      82 : "", FAIL;
+        Bin LINUX_83      83 : "", FAIL;
+        Bin LINUX_84      84 : "", FAIL;
+        Bin BOOT_STAGE_85 85 : "", FAIL;
+        Bin SVOS_86       86 : "", FAIL;
+        Bin SVOS_87       87 : "", FAIL;
+        Bin SVOS_88       88 : "", FAIL;
+        Bin SVOS_89       89 : "", FAIL;
+    }
+    BinGroup BOOT_FAILURE_BINS
+    {
+        LeafBin BOOT_STAGE_70_BOOT_FAILURE_FAILED    70000000 : "", BOOT_STAGE_70;
+        LeafBin BOOT_STAGE_70_BOOT_FAILURE_TIMEOUT   70000001 : "", BOOT_STAGE_70;
+        LeafBin BOOT_STAGE_70_BOOT_FAILURE_HANG      70000002 : "", BOOT_STAGE_70;
+        LeafBin BOOT_STAGE_70_BOOT_FAILURE_UNDEFINED 70000009 : "", BOOT_STAGE_70;
+        LeafBin EFI_71_BOOT_FAILURE_FAILED           71000000 : "", EFI_71;
+        LeafBin EFI_71_BOOT_FAILURE_TIMEOUT          71000001 : "", EFI_71;
+        LeafBin EFI_71_BOOT_FAILURE_HANG             71000002 : "", EFI_71;
+        LeafBin EFI_71_BOOT_FAILURE_UNDEFINED        71000009 : "", EFI_71;
+        LeafBin EFI_72_BOOT_FAILURE_FAILED           72000000 : "", EFI_72;
+        LeafBin EFI_72_BOOT_FAILURE_TIMEOUT          72000001 : "", EFI_72;
+        LeafBin EFI_72_BOOT_FAILURE_HANG             72000002 : "", EFI_72;
+        LeafBin EFI_72_BOOT_FAILURE_UNDEFINED        72000009 : "", EFI_72;
+        LeafBin EFI_73_BOOT_FAILURE_FAILED           73000000 : "", EFI_73;
+        LeafBin EFI_73_BOOT_FAILURE_TIMEOUT          73000001 : "", EFI_73;
+        LeafBin EFI_73_BOOT_FAILURE_HANG             73000002 : "", EFI_73;
+        LeafBin EFI_73_BOOT_FAILURE_UNDEFINED        73000009 : "", EFI_73;
+        LeafBin EFI_74_BOOT_FAILURE_FAILED           74000000 : "", EFI_74;
+        LeafBin EFI_74_BOOT_FAILURE_TIMEOUT          74000001 : "", EFI_74;
+        LeafBin EFI_74_BOOT_FAILURE_HANG             74000002 : "", EFI_74;
+        LeafBin EFI_74_BOOT_FAILURE_UNDEFINED        74000009 : "", EFI_74;
+        LeafBin WIN_75_BOOT_FAILURE_FAILED           75000000 : "", WIN_75;
+        LeafBin WIN_75_BOOT_FAILURE_TIMEOUT          75000001 : "", WIN_75;
+        LeafBin WIN_75_BOOT_FAILURE_HANG             75000002 : "", WIN_75;
+        LeafBin WIN_75_BOOT_FAILURE_UNDEFINED        75000009 : "", WIN_75;
+        LeafBin WIN_76_BOOT_FAILURE_FAILED           76000000 : "", WIN_76;
+        LeafBin WIN_76_BOOT_FAILURE_TIMEOUT          76000001 : "", WIN_76;
+        LeafBin WIN_76_BOOT_FAILURE_HANG             76000002 : "", WIN_76;
+        LeafBin WIN_76_BOOT_FAILURE_UNDEFINED        76000009 : "", WIN_76;
+        LeafBin WIN_77_BOOT_FAILURE_FAILED           77000000 : "", WIN_77;
+        LeafBin WIN_77_BOOT_FAILURE_TIMEOUT          77000001 : "", WIN_77;
+        LeafBin WIN_77_BOOT_FAILURE_HANG             77000002 : "", WIN_77;
+        LeafBin WIN_77_BOOT_FAILURE_UNDEFINED        77000009 : "", WIN_77;
+        LeafBin WIN_78_BOOT_FAILURE_FAILED           78000000 : "", WIN_78;
+        LeafBin WIN_78_BOOT_FAILURE_TIMEOUT          78000001 : "", WIN_78;
+        LeafBin WIN_78_BOOT_FAILURE_HANG             78000002 : "", WIN_78;
+        LeafBin WIN_78_BOOT_FAILURE_UNDEFINED        78000009 : "", WIN_78;
+        LeafBin BOOT_STAGE_79_BOOT_FAILURE_FAILED    79000000 : "", BOOT_STAGE_79;
+        LeafBin BOOT_STAGE_79_BOOT_FAILURE_TIMEOUT   79000001 : "", BOOT_STAGE_79;
+        LeafBin BOOT_STAGE_79_BOOT_FAILURE_HANG      79000002 : "", BOOT_STAGE_79;
+        LeafBin BOOT_STAGE_79_BOOT_FAILURE_UNDEFINED 79000009 : "", BOOT_STAGE_79;
+        LeafBin BOOT_STAGE_80_BOOT_FAILURE_FAILED    80000000 : "", BOOT_STAGE_80;
+        LeafBin BOOT_STAGE_80_BOOT_FAILURE_TIMEOUT   80000001 : "", BOOT_STAGE_80;
+        LeafBin BOOT_STAGE_80_BOOT_FAILURE_HANG      80000002 : "", BOOT_STAGE_80;
+        LeafBin BOOT_STAGE_80_BOOT_FAILURE_UNDEFINED 80000009 : "", BOOT_STAGE_80;
+        LeafBin LINUX_81_BOOT_FAILURE_FAILED         81000000 : "", LINUX_81;
+        LeafBin LINUX_81_BOOT_FAILURE_TIMEOUT        81000001 : "", LINUX_81;
+        LeafBin LINUX_81_BOOT_FAILURE_HANG           81000002 : "", LINUX_81;
+        LeafBin LINUX_81_BOOT_FAILURE_UNDEFINED      81000009 : "", LINUX_81;
+        LeafBin LINUX_82_BOOT_FAILURE_FAILED         82000000 : "", LINUX_82;
+        LeafBin LINUX_82_BOOT_FAILURE_TIMEOUT        82000001 : "", LINUX_82;
+        LeafBin LINUX_82_BOOT_FAILURE_HANG           82000002 : "", LINUX_82;
+        LeafBin LINUX_82_BOOT_FAILURE_UNDEFINED      82000009 : "", LINUX_82;
+        LeafBin LINUX_83_BOOT_FAILURE_FAILED         83000000 : "", LINUX_83;
+        LeafBin LINUX_83_BOOT_FAILURE_TIMEOUT        83000001 : "", LINUX_83;
+        LeafBin LINUX_83_BOOT_FAILURE_HANG           83000002 : "", LINUX_83;
+        LeafBin LINUX_83_BOOT_FAILURE_UNDEFINED      83000009 : "", LINUX_83;
+        LeafBin LINUX_84_BOOT_FAILURE_FAILED         84000000 : "", LINUX_84;
+        LeafBin LINUX_84_BOOT_FAILURE_TIMEOUT        84000001 : "", LINUX_84;
+        LeafBin LINUX_84_BOOT_FAILURE_HANG           84000002 : "", LINUX_84;
+        LeafBin LINUX_84_BOOT_FAILURE_UNDEFINED      84000009 : "", LINUX_84;
+        LeafBin BOOT_STAGE_85_BOOT_FAILURE_FAILED    85000000 : "", BOOT_STAGE_85;
+        LeafBin BOOT_STAGE_85_BOOT_FAILURE_TIMEOUT   85000001 : "", BOOT_STAGE_85;
+        LeafBin BOOT_STAGE_85_BOOT_FAILURE_HANG      85000002 : "", BOOT_STAGE_85;
+        LeafBin BOOT_STAGE_85_BOOT_FAILURE_UNDEFINED 85000009 : "", BOOT_STAGE_85;
+        LeafBin SVOS_86_BOOT_FAILURE_FAILED          86000000 : "", SVOS_86;
+        LeafBin SVOS_86_BOOT_FAILURE_TIMEOUT         86000001 : "", SVOS_86;
+        LeafBin SVOS_86_BOOT_FAILURE_HANG            86000002 : "", SVOS_86;
+        LeafBin SVOS_86_BOOT_FAILURE_UNDEFINED       86000009 : "", SVOS_86;
+        LeafBin SVOS_87_BOOT_FAILURE_FAILED          87000000 : "", SVOS_87;
+        LeafBin SVOS_87_BOOT_FAILURE_TIMEOUT         87000001 : "", SVOS_87;
+        LeafBin SVOS_87_BOOT_FAILURE_HANG            87000002 : "", SVOS_87;
+        LeafBin SVOS_87_BOOT_FAILURE_UNDEFINED       87000009 : "", SVOS_87;
+        LeafBin SVOS_88_BOOT_FAILURE_FAILED          88000000 : "", SVOS_88;
+        LeafBin SVOS_88_BOOT_FAILURE_TIMEOUT         88000001 : "", SVOS_88;
+        LeafBin SVOS_88_BOOT_FAILURE_HANG            88000002 : "", SVOS_88;
+        LeafBin SVOS_88_BOOT_FAILURE_UNDEFINED       88000009 : "", SVOS_88;
+        LeafBin SVOS_89_BOOT_FAILURE_FAILED          89000000 : "", SVOS_89;
+        LeafBin SVOS_89_BOOT_FAILURE_TIMEOUT         89000001 : "", SVOS_89;
+        LeafBin SVOS_89_BOOT_FAILURE_HANG            89000002 : "", SVOS_89;
+        LeafBin SVOS_89_BOOT_FAILURE_UNDEFINED       89000009 : "", SVOS_89;
+    }
+    BinGroup HARDWARE_FAILURES
+    {
+        LeafBin GENERAL_HARDWARE_FAILURE               90000000 : "", FAIL;
+        LeafBin ActuationHardwareException             90000100 : "", FAIL;
+        LeafBin AnalogIoException                      90000101 : "", FAIL;
+        LeafBin BiosEmulatorHardwareException          90000102 : "", FAIL;
+        LeafBin ChimeraHardwareException               90000103 : "", FAIL;
+        LeafBin DigitalIoException                     90000104 : "", FAIL;
+        LeafBin DVMLimitException                      90000105 : "", FAIL;
+        LeafBin EM100SoftwareNotInstalled              90000106 : "", FAIL;
+        LeafBin EmulationChipNotFoundException         90000107 : "", FAIL;
+        LeafBin EmulatorNotInitializedException        90000108 : "", FAIL;
+        LeafBin EmulatorVerifyFailedException          90000109 : "", FAIL;
+        LeafBin FailedToDetectBiosEmulatorException    90000110 : "", FAIL;
+        LeafBin GpioException                          90000111 : "", FAIL;
+        LeafBin HSTTCHardwareException                 90000112 : "", FAIL;
+        LeafBin SerialPortCloseFailedException         90000113 : "", FAIL;
+        LeafBin SerialPortConfigurationFailedException 90000114 : "", FAIL;
+        LeafBin SerialPortException                    90000115 : "", FAIL;
+        LeafBin SerialPortNotConfiguredException       90000116 : "", FAIL;
+        LeafBin SerialPortReadException                90000117 : "", FAIL;
+        LeafBin SerialPortWriteException               90000118 : "", FAIL;
+        LeafBin TapControllerException                 90000119 : "", FAIL;
+        LeafBin TargetCommunicationException           90000120 : "", FAIL;
+        LeafBin TestLoaderException                    90000121 : "", FAIL;
+        LeafBin ThermalControlHardwareException        90000122 : "", FAIL;
+        LeafBin HardwareException                      90000123 : "", FAIL;
+        LeafBin HardwareTimeoutException               90000124 : "", FAIL;
+        LeafBin MotionControlMDUTHardwareException     90000125 : "", FAIL;
+        LeafBin IntecHardwareException                 90000126 : "", FAIL;
+    }
+    BinGroup SOFTWARE_FAILURES
+    {
+        LeafBin GENERAL_SOFTWARE_FAILURE                   91000000 : "", FAIL;
+        LeafBin UNDEFINED_BIN                              91000001 : "", FAIL;
+        LeafBin NO_BIN_ASSIGNED_BIN                        91000002 : "", FAIL;
+        LeafBin UNIT_START_ERROR_BIN                       91000003 : "", FAIL;
+        LeafBin UNIT_END_ERROR_BIN                         91000004 : "", FAIL;
+        LeafBin EXECUTION_STOPPED_BIN                      91000005 : "", FAIL;
+        LeafBin NOKILL_TEST_BIN                            91000006 : "", FAIL;
+        LeafBin UNIT_START_TIMEOUT_BIN                     91000007 : "", FAIL;
+        LeafBin UNIT_END_TIMEOUT_BIN                       91000008 : "", FAIL;
+        LeafBin ArgumentException                          91000100 : "", FAIL;
+        LeafBin ArgumentNullException                      91000101 : "", FAIL;
+        LeafBin ArgumentOutOfRangeException                91000102 : "", FAIL;
+        LeafBin InvalidOperationException                  91000103 : "", FAIL;
+        LeafBin InvalidProgramException                    91000104 : "", FAIL;
+        LeafBin NotImplementedException                    91000105 : "", FAIL;
+        LeafBin NullReferenceException                     91000106 : "", FAIL;
+        LeafBin OperationCanceledException                 91000107 : "", FAIL;
+        LeafBin TaskCanceledException                      91000108 : "", FAIL;
+        LeafBin TimeoutException                           91000109 : "", FAIL;
+        LeafBin BinDoesNotExistException                   91000110 : "", FAIL;
+        LeafBin BinGroupDoesNotExistException              91000111 : "", FAIL;
+        LeafBin BreakpointException                        91000112 : "", FAIL;
+        LeafBin EndpointNotFoundHardwareException          91000113 : "", FAIL;
+        LeafBin EnvironmentVariableDoesNotExistException   91000114 : "", FAIL;
+        LeafBin NotSupportedException                      91000115 : "", FAIL;
+        LeafBin FileNotFoundException                      91000116 : "", FAIL;
+        LeafBin InvalidBreakpointException                 91000117 : "", FAIL;
+        LeafBin ModuleDoesNotExistException                91000118 : "", FAIL;
+        LeafBin TesterOsException                          91000119 : "", FAIL;
+        LeafBin TestInstanceDoesNotExistException          91000120 : "", FAIL;
+        LeafBin TestInstanceParameterCastException         91000121 : "", FAIL;
+        LeafBin TestInstanceParameterDoesNotExistException 91000122 : "", FAIL;
+        LeafBin TestInstanceParameterMayNotBeSetException  91000123 : "", FAIL;
+        LeafBin TestMethodException                        91000124 : "", FAIL;
+        LeafBin TplObjectCastException                     91000125 : "", FAIL;
+        LeafBin TplObjectCollectionDoesNotExistException   91000126 : "", FAIL;
+        LeafBin TplObjectDoesNotExistException             91000127 : "", FAIL;
+        LeafBin UnknownException                           91000128 : "", FAIL;
+        LeafBin UserVarCollectionDoesNotExistException     91000129 : "", FAIL;
+        LeafBin UserVarDoesNotExistException               91000130 : "", FAIL;
+        LeafBin DirectoryNotFoundException                 91000131 : "", FAIL;
+        LeafBin IOException                                91000132 : "", FAIL;
+        LeafBin UnauthorizedAccessException                91000133 : "", FAIL;
+        LeafBin FormatException                            91000134 : "", FAIL;
+        LeafBin DivideByZeroException                      91000135 : "", FAIL;
+        LeafBin OverflowException                          91000136 : "", FAIL;
+        LeafBin IndexOutOfRangeException                   91000137 : "", FAIL;
+        LeafBin PathTooLongException                       91000138 : "", FAIL;
+        LeafBin LogFilePublishException                    91000139 : "", FAIL;
+        LeafBin TestInstanceVerifyException                91000140 : "", FAIL;
+        LeafBin TestProgramVerifyException                 91000141 : "", FAIL;
+        LeafBin ClientAssemblyAlreadyLoadedException       91000142 : "", FAIL;
+        LeafBin ExecutionQueueException                    91000143 : "", FAIL;
+        LeafBin ExecutionStoppedException                  91000144 : "", FAIL;
+        LeafBin PredefinedFlowException                    91000145 : "", FAIL;
+        LeafBin SequencerAssemblyAlreadyLoadedException    91000146 : "", FAIL;
+        LeafBin SequencerStatusChangeException             91000147 : "", FAIL;
+        LeafBin SmartExitPortException                     91000148 : "", FAIL;
+        LeafBin TestProgramNotLoadedException              91000149 : "", FAIL;
+        LeafBin OnTargetBatchingException                  91000150 : "", FAIL;
+        LeafBin TraceException                             91000151 : "", FAIL;
+        LeafBin LotStartUserVarException                   91000152 : "", FAIL;
+        LeafBin NestExecuteContentException                91000153 : "", FAIL;
+        LeafBin InvalidUltException                        91000154 : "", FAIL;
+        LeafBin DffTokenNotExistException                  91000155 : "", FAIL;
+        LeafBin UbeFileParsingErrorException               91000156 : "", FAIL;
+        LeafBin UnitIdentifierNotExistException            91000157 : "", FAIL;
+        LeafBin DcfFileDeserializationException            91000158 : "", FAIL;
+        LeafBin DcfSubstructureNotFoundException           91000159 : "", FAIL;
+        LeafBin CattsException                             91000160 : "", FAIL;
+        LeafBin CommandLineProcessIsActiveException        91000161 : "", FAIL;
+        LeafBin CommandLineProcessNotActiveException       91000162 : "", FAIL;
+        LeafBin CommandLineProcessNotFoundException        91000163 : "", FAIL;
+        LeafBin DuplicateCommandLineProcessNameException   91000164 : "", FAIL;
+        LeafBin PythonExecuteException                     91000165 : "", FAIL;
+        LeafBin PythonServiceUnreachableException          91000166 : "", FAIL;
+        LeafBin PythonTimeoutException                     91000167 : "", FAIL;
+        LeafBin InvalidItuffSocketException                91000168 : "", FAIL;
+        LeafBin ItuffLineIncorrectException                91000169 : "", FAIL;
+        LeafBin FuseDefServiceAlreadyInitializedException  91000170 : "", FAIL;
+        LeafBin FuseFileParsingException                   91000171 : "", FAIL;
+        LeafBin FuseGroupNotExistException                 91000172 : "", FAIL;
+        LeafBin FuseNotExistException                      91000173 : "", FAIL;
+        LeafBin FuseServiceNotInitializedException         91000174 : "", FAIL;
+        LeafBin InconsistentFuseLengthException            91000175 : "", FAIL;
+        LeafBin InvalidQdfFuseFormatException              91000176 : "", FAIL;
+        LeafBin NotInitializedException                    91000177 : "", FAIL;
+        LeafBin RegisterNotExistException                  91000178 : "", FAIL;
+        LeafBin RegisterNotUpdatedException                91000179 : "", FAIL;
+        LeafBin SspecNotExistException                     91000180 : "", FAIL;
+        LeafBin PossibleTargetCommunicationException       91000181 : "", FAIL;
+        LeafBin FileExistsVerifyException                  91000182 : "", FAIL;
+    }
+    BinGroup SPECIAL_BINS
+    {
+        LeafBin UNIT_PASS          1000000 : "", PASS;
+        LeafBin TEST_METHOD_PASS   6990001 : "", PASS;
+        LeafBin IN_BETWEEN_PASS    6990002 : "", PASS;
+        LeafBin SPS_ESCAPEE        7000000 : "", FAIL;
+        LeafBin TEST_HOLE_CAPTURE  8000000 : "", FAIL;
+        LeafBin SPM_INVALID_REJECT 29000000 : "", FAIL;
+        LeafBin NO_RETEST          80900000 : "", FAIL;
+    }
+    BinGroup EFI_71_CMV_ARL8B32A_Search { }
+    BinGroup EFI_Slim20 { }
+    BinGroup EFI_71_CMV_ARL8B32A_ARL8B32A_H_1C1 { }
+    BinGroup EFI_71_CMV_ARL8B32A_Search1 { }
+    BinGroup EFI_71_CMV_ARLB8C_ARLB8C_H_1C5 { }
+    BinGroup EFI_71_CMV_ARLB8C_ARLB8C_R_1C4 { }
+}

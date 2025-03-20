@@ -1,0 +1,495 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Lab_cmvba.GAR\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.12.1</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="C:\Users\Lab_cmvba.GAR\.nuget\packages\" />
+    <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.aguilacontentmanagement\3.2.0\contentFiles\any\net8.0-windows7.0\Resources\acm_logo.ico" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.aguilacontentmanagement\3.2.0\contentFiles\any\net8.0-windows7.0\Resources\acm_logo.ico')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.AguilaContentManagement</NuGetPackageId>
+      <NuGetPackageVersion>3.2.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>Resources\acm_logo.ico</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.aguilacontentmanagement\3.2.0\contentFiles\any\net8.0-windows7.0\Resources\copy_clipboard.ico" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.aguilacontentmanagement\3.2.0\contentFiles\any\net8.0-windows7.0\Resources\copy_clipboard.ico')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.AguilaContentManagement</NuGetPackageId>
+      <NuGetPackageVersion>3.2.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>Resources\copy_clipboard.ico</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.aguilacontentmanagement\3.2.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\AguilaContentManagement.deps.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.aguilacontentmanagement\3.2.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\AguilaContentManagement.deps.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.AguilaContentManagement</NuGetPackageId>
+      <NuGetPackageVersion>3.2.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>AguilaContentManagement.deps.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0-windows\AguilaContentManagement.deps.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.aguilacontentmanagement\3.2.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\AguilaContentManagement.exe" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.aguilacontentmanagement\3.2.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\AguilaContentManagement.exe')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.AguilaContentManagement</NuGetPackageId>
+      <NuGetPackageVersion>3.2.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>AguilaContentManagement.exe</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0-windows\AguilaContentManagement.exe</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.aguilacontentmanagement\3.2.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\AguilaContentManagement.runtimeconfig.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.aguilacontentmanagement\3.2.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\AguilaContentManagement.runtimeconfig.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.AguilaContentManagement</NuGetPackageId>
+      <NuGetPackageVersion>3.2.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>AguilaContentManagement.runtimeconfig.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0-windows\AguilaContentManagement.runtimeconfig.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.aguilacontentmanagement\3.2.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\appsettings.AguilaContentManagement.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.aguilacontentmanagement\3.2.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\appsettings.AguilaContentManagement.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.AguilaContentManagement</NuGetPackageId>
+      <NuGetPackageVersion>3.2.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>appsettings.AguilaContentManagement.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0-windows\appsettings.AguilaContentManagement.json</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\AguilaContentManagement.deps.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\AguilaContentManagement.deps.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\AguilaContentManagement.deps.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\AguilaContentManagement.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\AguilaContentManagement.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\AguilaContentManagement.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\AguilaContentManagement.exe" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\AguilaContentManagement.exe')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\AguilaContentManagement.exe</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\AguilaContentManagement.runtimeconfig.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\AguilaContentManagement.runtimeconfig.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\AguilaContentManagement.runtimeconfig.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\AguilaContentManagement.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\AguilaContentManagement.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\AguilaContentManagement.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Backend.Powertools.deps.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Backend.Powertools.deps.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.Backend.Powertools.deps.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Backend.Powertools.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Backend.Powertools.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.Backend.Powertools.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Backend.Powertools.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Backend.Powertools.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.Backend.Powertools.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Telemetry.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Telemetry.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.Telemetry.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Telemetry.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Telemetry.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.Telemetry.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TesterOs.Abstractions.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TesterOs.Abstractions.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.TesterOs.Abstractions.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TesterOs.Abstractions.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TesterOs.Abstractions.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.TesterOs.Abstractions.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.BinningPowerTool.Core.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.BinningPowerTool.Core.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.BinningPowerTool.Core.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.BinningPowerTool.Core.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.BinningPowerTool.Core.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.BinningPowerTool.Core.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.CsvContentConverter.Core.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.CsvContentConverter.Core.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.CsvContentConverter.Core.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.CsvContentConverter.Core.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.CsvContentConverter.Core.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.CsvContentConverter.Core.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.PowerTool.Common.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.PowerTool.Common.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.PowerTool.Common.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.PowerTool.Common.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.PowerTool.Common.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.AcmPowerTools.PowerTool.Common.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.FamiliesPowerTool.Core.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.FamiliesPowerTool.Core.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.FamiliesPowerTool.Core.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.FamiliesPowerTool.Core.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.FamiliesPowerTool.Core.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.Tools.FamiliesPowerTool.Core.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplParser.Abstractions.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplParser.Abstractions.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplParser.Abstractions.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplParser.Abstractions.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplParser.Abstractions.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplParser.Abstractions.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplParser.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplParser.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplParser.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplParser.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplParser.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplParser.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSerializer.Abstractions.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSerializer.Abstractions.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSerializer.Abstractions.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSerializer.Abstractions.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSerializer.Abstractions.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSerializer.Abstractions.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSerializer.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSerializer.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSerializer.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSerializer.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSerializer.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSerializer.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSpecification.Contents.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSpecification.Contents.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSpecification.Contents.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSpecification.Contents.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSpecification.Contents.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSpecification.Contents.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSpecification.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSpecification.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSpecification.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSpecification.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSpecification.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Aguila.TplSpecification.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.Configuration.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.Configuration.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Extensions.Configuration.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.Configuration.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.Configuration.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Extensions.Configuration.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.DependencyInjection.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.DependencyInjection.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Extensions.DependencyInjection.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.DependencyInjection.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.DependencyInjection.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Extensions.DependencyInjection.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.Logging.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.Logging.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Extensions.Logging.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.Logging.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.Logging.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Extensions.Logging.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.NewtonsoftJson.DataContracts.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.NewtonsoftJson.DataContracts.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Extensions.NewtonsoftJson.DataContracts.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.NewtonsoftJson.DataContracts.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.NewtonsoftJson.DataContracts.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Extensions.NewtonsoftJson.DataContracts.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.NewtonsoftJson.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.NewtonsoftJson.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Extensions.NewtonsoftJson.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.NewtonsoftJson.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.NewtonsoftJson.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Extensions.NewtonsoftJson.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.System.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.System.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Extensions.System.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.System.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.System.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Extensions.System.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.TasksDataflow.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.TasksDataflow.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Extensions.TasksDataflow.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.TasksDataflow.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Extensions.TasksDataflow.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Extensions.TasksDataflow.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Services.Abstractions.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Services.Abstractions.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Services.Abstractions.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Services.Abstractions.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\Intel.Mfg.Services.Abstractions.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\Intel.Mfg.Services.Abstractions.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\QdfMatrixPowerTool.Core.dll" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\QdfMatrixPowerTool.Core.dll')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\QdfMatrixPowerTool.Core.dll</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\QdfMatrixPowerTool.Core.xml" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\QdfMatrixPowerTool.Core.xml')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\QdfMatrixPowerTool.Core.xml</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\appsettings.AguilaContentManagement.Development.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\appsettings.AguilaContentManagement.Development.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\appsettings.AguilaContentManagement.Development.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\appsettings.AguilaContentManagement.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.backend.powertools\2.5.0\contentFiles\any\net8.0-windows7.0\bin\Release\net8.0-windows\appsettings.AguilaContentManagement.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Backend.Powertools</NuGetPackageId>
+      <NuGetPackageVersion>2.5.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>bin\Release\net8.0-windows\appsettings.AguilaContentManagement.json</Link>
+    </Content>
+  </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets\8.0.0\buildTransitive\net6.0\Microsoft.Extensions.Configuration.UserSecrets.props" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.configuration.usersecrets\8.0.0\buildTransitive\net6.0\Microsoft.Extensions.Configuration.UserSecrets.props')" />
+  </ImportGroup>
+</Project>

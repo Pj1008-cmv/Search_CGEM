@@ -1,0 +1,701 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">$(MSBuildThisFileDirectory)project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">$(UserProfile)\.nuget\packages\</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">C:\Users\Lab_cmvba.GAR\.nuget\packages\;C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">6.12.1</NuGetToolVersion>
+  </PropertyGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <SourceRoot Include="C:\Users\Lab_cmvba.GAR\.nuget\packages\" />
+    <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.talon.services.pythonapi\4.7.0\contentFiles\any\net8.0\PythonScripts\Aguila\Ituff.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.talon.services.pythonapi\4.7.0\contentFiles\any\net8.0\PythonScripts\Aguila\Ituff.py')">
+      <NuGetPackageId>Intel.Mfg.Talon.Services.PythonAPI</NuGetPackageId>
+      <NuGetPackageVersion>4.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonScripts\Aguila\Ituff.py</TargetPath>
+      <DestinationSubDirectory>PythonScripts\Aguila\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonScripts\Aguila\Ituff.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.talon.services.pythonapi\4.7.0\contentFiles\any\net8.0\PythonScripts\Aguila\Profiler.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.talon.services.pythonapi\4.7.0\contentFiles\any\net8.0\PythonScripts\Aguila\Profiler.py')">
+      <NuGetPackageId>Intel.Mfg.Talon.Services.PythonAPI</NuGetPackageId>
+      <NuGetPackageVersion>4.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonScripts\Aguila\Profiler.py</TargetPath>
+      <DestinationSubDirectory>PythonScripts\Aguila\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonScripts\Aguila\Profiler.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.talon.services.pythonapi\4.7.0\contentFiles\any\net8.0\PythonScripts\Aguila\Serial.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.talon.services.pythonapi\4.7.0\contentFiles\any\net8.0\PythonScripts\Aguila\Serial.py')">
+      <NuGetPackageId>Intel.Mfg.Talon.Services.PythonAPI</NuGetPackageId>
+      <NuGetPackageVersion>4.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonScripts\Aguila\Serial.py</TargetPath>
+      <DestinationSubDirectory>PythonScripts\Aguila\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonScripts\Aguila\Serial.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.talon.services.pythonapi\4.7.0\contentFiles\any\net8.0\PythonScripts\Aguila\TestInstanceService.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.talon.services.pythonapi\4.7.0\contentFiles\any\net8.0\PythonScripts\Aguila\TestInstanceService.py')">
+      <NuGetPackageId>Intel.Mfg.Talon.Services.PythonAPI</NuGetPackageId>
+      <NuGetPackageVersion>4.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonScripts\Aguila\TestInstanceService.py</TargetPath>
+      <DestinationSubDirectory>PythonScripts\Aguila\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonScripts\Aguila\TestInstanceService.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.talon.services.pythonapi\4.7.0\contentFiles\any\net8.0\PythonScripts\Aguila\UserVar.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.talon.services.pythonapi\4.7.0\contentFiles\any\net8.0\PythonScripts\Aguila\UserVar.py')">
+      <NuGetPackageId>Intel.Mfg.Talon.Services.PythonAPI</NuGetPackageId>
+      <NuGetPackageVersion>4.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonScripts\Aguila\UserVar.py</TargetPath>
+      <DestinationSubDirectory>PythonScripts\Aguila\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonScripts\Aguila\UserVar.py</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.talon.services.nestpythonagent\2.10.0\contentFiles\any\netstandard2.0\PythonScripts\NestAgentClient\nest_client.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.talon.services.nestpythonagent\2.10.0\contentFiles\any\netstandard2.0\PythonScripts\NestAgentClient\nest_client.py')">
+      <NuGetPackageId>Intel.Mfg.Talon.Services.NestPythonAgent</NuGetPackageId>
+      <NuGetPackageVersion>2.10.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonScripts\NestAgentClient\nest_client.py</TargetPath>
+      <DestinationSubDirectory>PythonScripts\NestAgentClient\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonScripts\NestAgentClient\nest_client.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.talon.services.nestpythonagent\2.10.0\contentFiles\any\netstandard2.0\PythonScripts\NestAgentClient\nest_client_operations.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.talon.services.nestpythonagent\2.10.0\contentFiles\any\netstandard2.0\PythonScripts\NestAgentClient\nest_client_operations.py')">
+      <NuGetPackageId>Intel.Mfg.Talon.Services.NestPythonAgent</NuGetPackageId>
+      <NuGetPackageVersion>2.10.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonScripts\NestAgentClient\nest_client_operations.py</TargetPath>
+      <DestinationSubDirectory>PythonScripts\NestAgentClient\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonScripts\NestAgentClient\nest_client_operations.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.talon.services.nestpythonagent\2.10.0\contentFiles\any\netstandard2.0\PythonScripts\NestAgentClient\nest_operation.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.talon.services.nestpythonagent\2.10.0\contentFiles\any\netstandard2.0\PythonScripts\NestAgentClient\nest_operation.py')">
+      <NuGetPackageId>Intel.Mfg.Talon.Services.NestPythonAgent</NuGetPackageId>
+      <NuGetPackageVersion>2.10.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonScripts\NestAgentClient\nest_operation.py</TargetPath>
+      <DestinationSubDirectory>PythonScripts\NestAgentClient\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonScripts\NestAgentClient\nest_operation.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.talon.services.nestpythonagent\2.10.0\contentFiles\any\netstandard2.0\PythonScripts\NestAgentClient\nest_operation_status.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.talon.services.nestpythonagent\2.10.0\contentFiles\any\netstandard2.0\PythonScripts\NestAgentClient\nest_operation_status.py')">
+      <NuGetPackageId>Intel.Mfg.Talon.Services.NestPythonAgent</NuGetPackageId>
+      <NuGetPackageVersion>2.10.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonScripts\NestAgentClient\nest_operation_status.py</TargetPath>
+      <DestinationSubDirectory>PythonScripts\NestAgentClient\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonScripts\NestAgentClient\nest_operation_status.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.talon.services.nestpythonagent\2.10.0\contentFiles\any\netstandard2.0\PythonScripts\NestAgentClient\scratchpad_register_communication.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.talon.services.nestpythonagent\2.10.0\contentFiles\any\netstandard2.0\PythonScripts\NestAgentClient\scratchpad_register_communication.py')">
+      <NuGetPackageId>Intel.Mfg.Talon.Services.NestPythonAgent</NuGetPackageId>
+      <NuGetPackageVersion>2.10.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonScripts\NestAgentClient\scratchpad_register_communication.py</TargetPath>
+      <DestinationSubDirectory>PythonScripts\NestAgentClient\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonScripts\NestAgentClient\scratchpad_register_communication.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.talon.services.nestpythonagent\2.10.0\contentFiles\any\netstandard2.0\PythonScripts\NestAgentClient\scratchpad_register_interface.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.talon.services.nestpythonagent\2.10.0\contentFiles\any\netstandard2.0\PythonScripts\NestAgentClient\scratchpad_register_interface.py')">
+      <NuGetPackageId>Intel.Mfg.Talon.Services.NestPythonAgent</NuGetPackageId>
+      <NuGetPackageVersion>2.10.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonScripts\NestAgentClient\scratchpad_register_interface.py</TargetPath>
+      <DestinationSubDirectory>PythonScripts\NestAgentClient\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonScripts\NestAgentClient\scratchpad_register_interface.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.talon.services.nestpythonagent\2.10.0\contentFiles\any\netstandard2.0\PythonScripts\NestAgentClient\timeout.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.talon.services.nestpythonagent\2.10.0\contentFiles\any\netstandard2.0\PythonScripts\NestAgentClient\timeout.py')">
+      <NuGetPackageId>Intel.Mfg.Talon.Services.NestPythonAgent</NuGetPackageId>
+      <NuGetPackageVersion>2.10.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonScripts\NestAgentClient\timeout.py</TargetPath>
+      <DestinationSubDirectory>PythonScripts\NestAgentClient\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonScripts\NestAgentClient\timeout.py</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.pythonapi\3.7.0\contentFiles\any\net8.0\PythonScripts\Aguila\__init__.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.pythonapi\3.7.0\contentFiles\any\net8.0\PythonScripts\Aguila\__init__.py')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.PythonAPI</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonScripts\Aguila\__init__.py</TargetPath>
+      <DestinationSubDirectory>PythonScripts\Aguila\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonScripts\Aguila\__init__.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.pythonapi\3.7.0\contentFiles\any\net8.0\PythonScripts\PythonAPI_pb2.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.pythonapi\3.7.0\contentFiles\any\net8.0\PythonScripts\PythonAPI_pb2.py')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.PythonAPI</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonScripts\PythonAPI_pb2.py</TargetPath>
+      <DestinationSubDirectory>PythonScripts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonScripts\PythonAPI_pb2.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.pythonapi\3.7.0\contentFiles\any\net8.0\PythonScripts\PythonAPI_pb2_grpc.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.pythonapi\3.7.0\contentFiles\any\net8.0\PythonScripts\PythonAPI_pb2_grpc.py')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.PythonAPI</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonScripts\PythonAPI_pb2_grpc.py</TargetPath>
+      <DestinationSubDirectory>PythonScripts\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonScripts\PythonAPI_pb2_grpc.py</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.service\4.7.0\contentFiles\any\net8.0\appsettings.service.Development.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.service\4.7.0\contentFiles\any\net8.0\appsettings.service.Development.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Service</NuGetPackageId>
+      <NuGetPackageVersion>4.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>appsettings.service.Development.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.service\4.7.0\contentFiles\any\net8.0\appsettings.service.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.service\4.7.0\contentFiles\any\net8.0\appsettings.service.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Service</NuGetPackageId>
+      <NuGetPackageVersion>4.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <Private>False</Private>
+      <Link>appsettings.service.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.service\4.7.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Service.deps.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.service\4.7.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Service.deps.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Service</NuGetPackageId>
+      <NuGetPackageVersion>4.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Intel.Mfg.Aguila.TplSequencer.Service.deps.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Service.deps.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.service\4.7.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Service.exe" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.service\4.7.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Service.exe')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Service</NuGetPackageId>
+      <NuGetPackageVersion>4.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Intel.Mfg.Aguila.TplSequencer.Service.exe</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Service.exe</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.service\4.7.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Service.runtimeconfig.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.service\4.7.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Service.runtimeconfig.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Service</NuGetPackageId>
+      <NuGetPackageVersion>4.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Intel.Mfg.Aguila.TplSequencer.Service.runtimeconfig.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Service.runtimeconfig.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.service\4.7.0\contentFiles\any\net8.0\bin\Release\net8.0\appsettings.service.Development.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.service\4.7.0\contentFiles\any\net8.0\bin\Release\net8.0\appsettings.service.Development.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Service</NuGetPackageId>
+      <NuGetPackageVersion>4.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>appsettings.service.Development.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\appsettings.service.Development.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.service\4.7.0\contentFiles\any\net8.0\bin\Release\net8.0\appsettings.service.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.service\4.7.0\contentFiles\any\net8.0\bin\Release\net8.0\appsettings.service.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Service</NuGetPackageId>
+      <NuGetPackageVersion>4.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>appsettings.service.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\appsettings.service.json</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.client\8.7.0\contentFiles\any\net8.0\appsettings.client.Development.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.client\8.7.0\contentFiles\any\net8.0\appsettings.client.Development.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Client</NuGetPackageId>
+      <NuGetPackageVersion>8.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>appsettings.client.Development.json</TargetPath>
+      <Private>True</Private>
+      <Link>appsettings.client.Development.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.client\8.7.0\contentFiles\any\net8.0\appsettings.client.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.client\8.7.0\contentFiles\any\net8.0\appsettings.client.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Client</NuGetPackageId>
+      <NuGetPackageVersion>8.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>appsettings.client.json</TargetPath>
+      <Private>True</Private>
+      <Link>appsettings.client.json</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.driver\5.0.0\contentFiles\any\net8.0\appsettings.driver.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.driver\5.0.0\contentFiles\any\net8.0\appsettings.driver.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Driver</NuGetPackageId>
+      <NuGetPackageVersion>5.0.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>appsettings.driver.json</TargetPath>
+      <Private>True</Private>
+      <Link>appsettings.driver.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.driver\5.0.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Driver.deps.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.driver\5.0.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Driver.deps.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Driver</NuGetPackageId>
+      <NuGetPackageVersion>5.0.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Intel.Mfg.Aguila.TplSequencer.Driver.deps.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Driver.deps.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.driver\5.0.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Driver.exe" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.driver\5.0.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Driver.exe')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Driver</NuGetPackageId>
+      <NuGetPackageVersion>5.0.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Intel.Mfg.Aguila.TplSequencer.Driver.exe</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Driver.exe</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.driver\5.0.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Driver.runtimeconfig.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.driver\5.0.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Driver.runtimeconfig.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Driver</NuGetPackageId>
+      <NuGetPackageVersion>5.0.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Intel.Mfg.Aguila.TplSequencer.Driver.runtimeconfig.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\Intel.Mfg.Aguila.TplSequencer.Driver.runtimeconfig.json</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.console\3.7.0\contentFiles\any\net8.0\GenerateUpgradeReport\styles.css" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.console\3.7.0\contentFiles\any\net8.0\GenerateUpgradeReport\styles.css')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Console</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>GenerateUpgradeReport\styles.css</TargetPath>
+      <DestinationSubDirectory>GenerateUpgradeReport\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>GenerateUpgradeReport\styles.css</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.console\3.7.0\contentFiles\any\net8.0\NuGet.Config" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.console\3.7.0\contentFiles\any\net8.0\NuGet.Config')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Console</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>NuGet.Config</TargetPath>
+      <Private>True</Private>
+      <Link>NuGet.Config</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.console\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\TplSequencer.Console.deps.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.console\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\TplSequencer.Console.deps.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Console</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>TplSequencer.Console.deps.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\TplSequencer.Console.deps.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.console\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\TplSequencer.Console.exe" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.console\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\TplSequencer.Console.exe')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Console</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>TplSequencer.Console.exe</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\TplSequencer.Console.exe</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.console\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\TplSequencer.Console.runtimeconfig.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tplsequencer.console\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\TplSequencer.Console.runtimeconfig.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.TplSequencer.Console</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>TplSequencer.Console.runtimeconfig.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\TplSequencer.Console.runtimeconfig.json</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.reportgenerator\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\ReportGenerator.deps.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.reportgenerator\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\ReportGenerator.deps.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.ReportGenerator</NuGetPackageId>
+      <NuGetPackageVersion>2.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>ReportGenerator.deps.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\ReportGenerator.deps.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.reportgenerator\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\ReportGenerator.exe" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.reportgenerator\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\ReportGenerator.exe')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.ReportGenerator</NuGetPackageId>
+      <NuGetPackageVersion>2.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>ReportGenerator.exe</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\ReportGenerator.exe</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.reportgenerator\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\ReportGenerator.runtimeconfig.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.reportgenerator\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\ReportGenerator.runtimeconfig.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.ReportGenerator</NuGetPackageId>
+      <NuGetPackageVersion>2.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>ReportGenerator.runtimeconfig.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\ReportGenerator.runtimeconfig.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.reportgenerator\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\appsettings.ReportGenerator.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.reportgenerator\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\appsettings.ReportGenerator.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.ReportGenerator</NuGetPackageId>
+      <NuGetPackageVersion>2.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>appsettings.ReportGenerator.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\appsettings.ReportGenerator.json</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.qdfmatrixpowertool\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\QdfMatrixPowerTool.deps.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.qdfmatrixpowertool\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\QdfMatrixPowerTool.deps.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.QdfMatrixPowerTool</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>QdfMatrixPowerTool.deps.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\QdfMatrixPowerTool.deps.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.qdfmatrixpowertool\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\QdfMatrixPowerTool.exe" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.qdfmatrixpowertool\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\QdfMatrixPowerTool.exe')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.QdfMatrixPowerTool</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>QdfMatrixPowerTool.exe</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\QdfMatrixPowerTool.exe</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.qdfmatrixpowertool\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\QdfMatrixPowerTool.runtimeconfig.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.qdfmatrixpowertool\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\QdfMatrixPowerTool.runtimeconfig.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.QdfMatrixPowerTool</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>QdfMatrixPowerTool.runtimeconfig.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\QdfMatrixPowerTool.runtimeconfig.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.qdfmatrixpowertool\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\appsettings.QdfMatrixPowerTool.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.qdfmatrixpowertool\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\appsettings.QdfMatrixPowerTool.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.QdfMatrixPowerTool</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>appsettings.QdfMatrixPowerTool.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\appsettings.QdfMatrixPowerTool.json</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.platformservices.python\5.7.0\contentFiles\any\net8.0\PythonConsoleService\PythonServer.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.platformservices.python\5.7.0\contentFiles\any\net8.0\PythonConsoleService\PythonServer.py')">
+      <NuGetPackageId>Intel.Mfg.Aguila.PlatformServices.Python</NuGetPackageId>
+      <NuGetPackageVersion>5.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonConsoleService\PythonServer.py</TargetPath>
+      <DestinationSubDirectory>PythonConsoleService\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonConsoleService\PythonServer.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.platformservices.python\5.7.0\contentFiles\any\net8.0\PythonConsoleService\Python_pb2.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.platformservices.python\5.7.0\contentFiles\any\net8.0\PythonConsoleService\Python_pb2.py')">
+      <NuGetPackageId>Intel.Mfg.Aguila.PlatformServices.Python</NuGetPackageId>
+      <NuGetPackageVersion>5.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonConsoleService\Python_pb2.py</TargetPath>
+      <DestinationSubDirectory>PythonConsoleService\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonConsoleService\Python_pb2.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.platformservices.python\5.7.0\contentFiles\any\net8.0\PythonConsoleService\Python_pb2_grpc.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.platformservices.python\5.7.0\contentFiles\any\net8.0\PythonConsoleService\Python_pb2_grpc.py')">
+      <NuGetPackageId>Intel.Mfg.Aguila.PlatformServices.Python</NuGetPackageId>
+      <NuGetPackageVersion>5.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonConsoleService\Python_pb2_grpc.py</TargetPath>
+      <DestinationSubDirectory>PythonConsoleService\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonConsoleService\Python_pb2_grpc.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.platformservices.python\5.7.0\contentFiles\any\net8.0\PythonConsoleService\iterable_queue.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.platformservices.python\5.7.0\contentFiles\any\net8.0\PythonConsoleService\iterable_queue.py')">
+      <NuGetPackageId>Intel.Mfg.Aguila.PlatformServices.Python</NuGetPackageId>
+      <NuGetPackageVersion>5.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonConsoleService\iterable_queue.py</TargetPath>
+      <DestinationSubDirectory>PythonConsoleService\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonConsoleService\iterable_queue.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.platformservices.python\5.7.0\contentFiles\any\net8.0\PythonConsoleService\stdout_redirects.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.platformservices.python\5.7.0\contentFiles\any\net8.0\PythonConsoleService\stdout_redirects.py')">
+      <NuGetPackageId>Intel.Mfg.Aguila.PlatformServices.Python</NuGetPackageId>
+      <NuGetPackageVersion>5.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonConsoleService\stdout_redirects.py</TargetPath>
+      <DestinationSubDirectory>PythonConsoleService\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonConsoleService\stdout_redirects.py</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.platformservices.python\5.7.0\contentFiles\any\net8.0\PythonConsoleService\stoppable_thread.py" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.platformservices.python\5.7.0\contentFiles\any\net8.0\PythonConsoleService\stoppable_thread.py')">
+      <NuGetPackageId>Intel.Mfg.Aguila.PlatformServices.Python</NuGetPackageId>
+      <NuGetPackageVersion>5.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>PythonConsoleService\stoppable_thread.py</TargetPath>
+      <DestinationSubDirectory>PythonConsoleService\</DestinationSubDirectory>
+      <Private>True</Private>
+      <Link>PythonConsoleService\stoppable_thread.py</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.pythonconsoleclient\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.Tools.PythonConsoleClient.deps.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.pythonconsoleclient\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.Tools.PythonConsoleClient.deps.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.PythonConsoleClient</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Intel.Mfg.Aguila.Tools.PythonConsoleClient.deps.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\Intel.Mfg.Aguila.Tools.PythonConsoleClient.deps.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.pythonconsoleclient\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.Tools.PythonConsoleClient.exe" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.pythonconsoleclient\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.Tools.PythonConsoleClient.exe')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.PythonConsoleClient</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Intel.Mfg.Aguila.Tools.PythonConsoleClient.exe</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\Intel.Mfg.Aguila.Tools.PythonConsoleClient.exe</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.pythonconsoleclient\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.Tools.PythonConsoleClient.runtimeconfig.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.pythonconsoleclient\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\Intel.Mfg.Aguila.Tools.PythonConsoleClient.runtimeconfig.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.PythonConsoleClient</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>Intel.Mfg.Aguila.Tools.PythonConsoleClient.runtimeconfig.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\Intel.Mfg.Aguila.Tools.PythonConsoleClient.runtimeconfig.json</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.familiespowertool\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\FamiliesPowerTool.deps.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.familiespowertool\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\FamiliesPowerTool.deps.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.FamiliesPowerTool</NuGetPackageId>
+      <NuGetPackageVersion>2.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>FamiliesPowerTool.deps.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\FamiliesPowerTool.deps.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.familiespowertool\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\FamiliesPowerTool.exe" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.familiespowertool\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\FamiliesPowerTool.exe')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.FamiliesPowerTool</NuGetPackageId>
+      <NuGetPackageVersion>2.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>FamiliesPowerTool.exe</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\FamiliesPowerTool.exe</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.familiespowertool\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\FamiliesPowerTool.runtimeconfig.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.familiespowertool\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\FamiliesPowerTool.runtimeconfig.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.FamiliesPowerTool</NuGetPackageId>
+      <NuGetPackageVersion>2.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>FamiliesPowerTool.runtimeconfig.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\FamiliesPowerTool.runtimeconfig.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.familiespowertool\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\appsettings.FamiliesPowerTool.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.familiespowertool\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\appsettings.FamiliesPowerTool.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.FamiliesPowerTool</NuGetPackageId>
+      <NuGetPackageVersion>2.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>appsettings.FamiliesPowerTool.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\appsettings.FamiliesPowerTool.json</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.csvcontentconverter\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\CsvContentConverter.deps.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.csvcontentconverter\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\CsvContentConverter.deps.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.CsvContentConverter</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>CsvContentConverter.deps.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\CsvContentConverter.deps.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.csvcontentconverter\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\CsvContentConverter.exe" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.csvcontentconverter\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\CsvContentConverter.exe')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.CsvContentConverter</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>CsvContentConverter.exe</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\CsvContentConverter.exe</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.csvcontentconverter\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\CsvContentConverter.runtimeconfig.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.csvcontentconverter\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\CsvContentConverter.runtimeconfig.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.CsvContentConverter</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>CsvContentConverter.runtimeconfig.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\CsvContentConverter.runtimeconfig.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.csvcontentconverter\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\appsettings.CsvContentConverter.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.csvcontentconverter\3.7.0\contentFiles\any\net8.0\bin\Release\net8.0\appsettings.CsvContentConverter.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.CsvContentConverter</NuGetPackageId>
+      <NuGetPackageVersion>3.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>appsettings.CsvContentConverter.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\appsettings.CsvContentConverter.json</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.acmpowertools.binningpowertool\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\BinningPowerTool.deps.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.acmpowertools.binningpowertool\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\BinningPowerTool.deps.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.AcmPowerTools.BinningPowerTool</NuGetPackageId>
+      <NuGetPackageVersion>2.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>BinningPowerTool.deps.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\BinningPowerTool.deps.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.acmpowertools.binningpowertool\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\BinningPowerTool.exe" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.acmpowertools.binningpowertool\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\BinningPowerTool.exe')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.AcmPowerTools.BinningPowerTool</NuGetPackageId>
+      <NuGetPackageVersion>2.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>BinningPowerTool.exe</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\BinningPowerTool.exe</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.acmpowertools.binningpowertool\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\BinningPowerTool.runtimeconfig.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.acmpowertools.binningpowertool\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\BinningPowerTool.runtimeconfig.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.AcmPowerTools.BinningPowerTool</NuGetPackageId>
+      <NuGetPackageVersion>2.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>BinningPowerTool.runtimeconfig.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\BinningPowerTool.runtimeconfig.json</Link>
+    </Content>
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.tools.acmpowertools.binningpowertool\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\appsettings.BinningPowerTool.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.tools.acmpowertools.binningpowertool\2.7.0\contentFiles\any\net8.0\bin\Release\net8.0\appsettings.BinningPowerTool.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.Tools.AcmPowerTools.BinningPowerTool</NuGetPackageId>
+      <NuGetPackageVersion>2.7.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>appsettings.BinningPowerTool.json</TargetPath>
+      <Private>True</Private>
+      <Link>bin\Release\net8.0\appsettings.BinningPowerTool.json</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Content Include="$(NuGetPackageRoot)intel.mfg.aguila.platformservices.serialport\3.0.0\contentFiles\any\netstandard2.0\appsettings.serialport.json" Condition="Exists('$(NuGetPackageRoot)intel.mfg.aguila.platformservices.serialport\3.0.0\contentFiles\any\netstandard2.0\appsettings.serialport.json')">
+      <NuGetPackageId>Intel.Mfg.Aguila.PlatformServices.SerialPort</NuGetPackageId>
+      <NuGetPackageVersion>3.0.0</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Pack>false</Pack>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <TargetPath>appsettings.serialport.json</TargetPath>
+      <Private>True</Private>
+      <Link>appsettings.serialport.json</Link>
+    </Content>
+  </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)grpc.tools\2.65.0\build\Grpc.Tools.props" Condition="Exists('$(NuGetPackageRoot)grpc.tools\2.65.0\build\Grpc.Tools.props')" />
+  </ImportGroup>
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgReinforced_Typings Condition=" '$(PkgReinforced_Typings)' == '' ">C:\Users\Lab_cmvba.GAR\.nuget\packages\reinforced.typings\1.6.3</PkgReinforced_Typings>
+    <PkgGrpc_Tools Condition=" '$(PkgGrpc_Tools)' == '' ">C:\Users\Lab_cmvba.GAR\.nuget\packages\grpc.tools\2.65.0</PkgGrpc_Tools>
+  </PropertyGroup>
+</Project>
